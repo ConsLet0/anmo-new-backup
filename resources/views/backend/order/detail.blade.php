@@ -21,7 +21,7 @@
                 </a>
             </h5>
             <h4>
-                <i class="fas fa-globe"></i> Pundok Kopi Anglo Belitung.
+                <i class="fas fa-globe"></i> ANMO CAFE SUKAASIH.
                 <small class="float-right">Date: {{ $order->created_at->format('d/M/Y') }}</small>
             </h4>
         </div>
@@ -32,10 +32,10 @@
         <div class="col-sm-4 invoice-col">
             From
             <address>
-            <strong>Pundok Kopi Anglo Belitung</strong><br>
+            <strong>ANMO CAFE SUKAASIH</strong><br>
             Jalan Sriwijaya 33411 Paal Satu Belitung
             Phone: (804) 123-5432<br>
-            Email: pundokanglo@gmail.com
+            Email: anmocafe954@gmail.com
             </address>
         </div>
         <!-- /.col -->

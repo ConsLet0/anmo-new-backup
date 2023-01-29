@@ -13,14 +13,14 @@
                 <form action="{{ route('login') }}" method="POST">
                     @csrf
                     <label for="email">Email</label>
-                    <input type="email" placeholder="contoh:ucok@gmail.com" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror">
+                    <input type="email" placeholder="Email Goes Here" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror">
                     @error('email')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
                     @enderror
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror"/>
+                    <input type="password" placeholder="Password Goes Here" id="password" name="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror"/>
                     @error('password')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}

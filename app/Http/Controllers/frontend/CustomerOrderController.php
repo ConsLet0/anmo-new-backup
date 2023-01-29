@@ -177,7 +177,7 @@ class CustomerOrderController extends Controller
             ->where('created_at', $created_at)
             ->first();
 
-        $filename = 'struk_belanja_angloResto.pdf';
+        $filename = 'struk_belanja_AnmoCafe.pdf';
         $mpdf     = new \Mpdf\Mpdf([
             'mode'          =>      'utf-8',
             'format'        =>      [58, 150],

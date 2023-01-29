@@ -1,7 +1,7 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-Keranjang Meja 1
+    Keranjang Meja 1
 @endsection
 
 @section('content')

@@ -56,15 +56,6 @@
             grid-column: 3/4;
         }
 
-
-        /* .tab-items> :nth-child(4) {
-            grid-column: 4/5;
-        }
-
-        .tab-items> :nth-child(5) {
-            grid-column: 5/6;
-        } */
-
         .tab-item {
             display: inline;
             grid-row: 1/2;

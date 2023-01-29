@@ -36,7 +36,7 @@
     <script src="{{ asset('datatable/jquery.dataTables.min.js') }}"></script>
     <script src="//cdn.datatables.net/plug-ins/1.11.4/api/fnReloadAjax.js"></script>
     <script src="{{ asset('datatable/dataTables.bootstrap4.min.js') }}"></script>
-    <title>@yield('title') | Pundok Anglo Cafe</title>
+    <title>@yield('title') | ANMO CAFE SUKAASIH</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -102,7 +102,7 @@
             <a href="index3.html" class="brand-link">
                 <img src="{{ asset('backend/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Anglo Cafe</span>
+                <span class="brand-text font-weight-light">ANMO CAFE SUKAASIH</span>
             </a>
 
             <!-- Sidebar -->
@@ -252,10 +252,10 @@
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                Pundok Kopi Anglo
+                ANMO CAFE SUKAASIH
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2022 <a href="#">Pundok Kopi Anglo</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2022 <a href="#">ANMO CAFE SUKAASIH</a>.</strong> All rights reserved.
         </footer>
 
     </div>

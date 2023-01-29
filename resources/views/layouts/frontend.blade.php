@@ -12,11 +12,11 @@
     <link href="{{ asset('frontend/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('frontend/css/main.css') }}" rel="stylesheet">
 	<link href="{{ asset('frontend/css/responsive.css') }}" rel="stylesheet">
+	<link href="{{ asset('frontend/css/style-frontend.css') }}" rel="stylesheet">
 
     {{-- Font Awesome --}}
     <script src="https://kit.fontawesome.com/e0e5d17da7.js" crossorigin="anonymous"></script>
-    <title>@yield('title') | Pundok Anglo</title>
-    @include('layouts.style-frontend')
+    <title>@yield('title') | ANMO CAFE SUKAASIH</title>
 </head>
 <body>
     <header id="header">
@@ -26,7 +26,7 @@
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
 							{{-- <a href="index.html"><img src="{{ asset('frontend/images/home/logo.png') }}" alt="" /></a> --}}
-                            <h3>Pundok Kopi Anglo</h4>
+                            <h3>ANMO CAFE SUKAASIH</h4>
 						</div>
 
 					</div>

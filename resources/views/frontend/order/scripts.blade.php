@@ -6,22 +6,6 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
             }
         });
-
-        //reload page otamatis
-        // setTimeout(function(){
-        //     window.location.reload(1);
-        // }, 10000);
-
-        // $('#tableMenuMakanan').DataTable({
-        //     responsive: true,
-        //     lengthCase: true,
-        //     autoWidth:true,
-        //     paging:true,
-        //     searching:true,
-        //     ordering:true,
-        //     info:true,
-        // });
-
         //store keranjang;
         $(document).on('submit', '#orderMakanan', function(e) {
             e.preventDefault();
