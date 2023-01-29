@@ -13,7 +13,7 @@
     <div class="wrap">
         <div class="content">
             <div class="header">
-                {{-- <h4>PUNDOK KUPI ANGLO</h4> --}}
+                {{-- <h4>ANMO CAFE SUKAASIH</h4> --}}
                 <h5><b>STRUK PEMBAYARAN PUNDOK <br>KUPI ANGLO</b></h5>
             </div>
             <table>

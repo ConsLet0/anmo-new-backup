@@ -7,7 +7,7 @@
 @section('content')
 <div class="row mb-3 text-center">
     <div class="col-md-12">
-        <h4 class="text-uppercase">Pundok Kupi Anglo</h4>
+        <h4 class="text-uppercase">ANMO CAFE SUKAASIH</h4>
     </div>
 </div>
 <div class="row mb-3">
