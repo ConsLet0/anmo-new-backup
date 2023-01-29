@@ -14,7 +14,7 @@
         <div class="content">
             <div class="header">
                 {{-- <h4>ANMO CAFE SUKAASIH</h4> --}}
-                <h5><b>STRUK PEMBAYARAN PUNDOK <br>KUPI ANGLO</b></h5>
+                <h5><b>STRUK PEMBAYARAN ANMO <br>CAFE SUKAASIH</b></h5>
             </div>
             <table>
                 <tbody>
