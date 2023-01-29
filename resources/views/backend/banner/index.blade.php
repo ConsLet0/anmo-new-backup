@@ -84,7 +84,7 @@
                                         </a>
                                         <form onsubmit="return confirm('Yakin ingin menghapus banner ini !')" action="{{ route('banner.destroy', $dataBanner->id) }}" method="POST">
                                             @csrf
-                                            @method('DELETE')
+                                            @method('POST')
                                             <button type="submit" class="btn btn-danger btn-sm">
                                                 Delete
                                             </button>
@@ -177,7 +177,7 @@
                                         </a>
                                         <form onsubmit="return confirm('Yakin ingin menghapus banner ini !')" action="{{ route('banner2.destroy', $dataBanner2->id) }}" method="POST">
                                             @csrf
-                                            @method('DELETE')
+                                            @method('POST')
                                             <button type="submit" class="btn btn-danger btn-sm">
                                                 Delete
                                             </button>
