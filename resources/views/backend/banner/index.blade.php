@@ -65,7 +65,7 @@
                                 @if (isset($dataBanner))
                                     {{ $dataBanner->name }}
                                 @else
-                                    Data Belum Ada !
+                                    Belum Ada Data !
                                 @endif
                             </td>
                             <td>
@@ -90,7 +90,7 @@
                                             </button>
                                         </form>
                                     @else
-                                        Data Belum Tersedia !
+                                        Belum Ada Data !
                                     @endif
                                 </div>
                             </td>
