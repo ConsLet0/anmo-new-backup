@@ -125,24 +125,24 @@ Meja 1
 
     @section('tabsMenu')
     <div class="fixed-bottom bg-white">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12" style="background-color: #fff;">
-                    <div class="form-group mb-3 bg-warning text-center">
-                        <label for="name">Nama Pemesan</label>
-                        <input autofocus type="text" class="form-control" name="name" placeholder="Isi Nama Pemesan">
-                        <span class="text-danger error-text name_error"></span>
+        <div class="tab">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group mb-3 text-center">
+                            <label for="name">Nama Pemesan</label>
+                            <input autofocus type="text" class="form-control" name="name" placeholder="Isi Nama Pemesan">
+                            <span class="text-danger error-text name_error"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 mb-3">
+                        <button type="submit" class="btn btn-danger btn-block">
+                            <i class="fa fa-gift"></i>
+                            Pesan Sekarang
+                        </button>
                     </div>
                 </div>
-                <div class="col-md-12 mb-3" style="background-color: #fff;">
-                    <button type="submit" class="btn btn-danger btn-block">
-                        <i class="fa fa-gift"></i>
-                        Pesan Sekarang
-                    </button>
-                </div>
             </div>
-        </div>
-        <div class="tab">
             @if (isset($tables))
             <li class="tab-item different">
                 <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
