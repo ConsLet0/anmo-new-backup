@@ -58,7 +58,7 @@ Meja 1
             <p>
                 <a class="btn-sm btn btn-success btn-block" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
                     <span class="fas fa-eye"></span>
-                    {{ $categories-> name}}
+                    {{ $categories->name}}
                 </a>
             </p>
             <div class="collapse multi-collapse" id="multiCollapseExample1">
@@ -91,7 +91,21 @@ Meja 1
                                 </tr>
                                 @endif
                                 @else
-                                Produk Tidak Tersedia
+
+                                <tr>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                        <button type="button" class="btn-block btn-dark" disabled>SOLD OUT</button>
+                                        <select hidden name="status" class="form-control">
+                                            <option selected value="0">Menunggu Konfirmasi</option>
+                                        </select>
+                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                    </td>
+                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                </tr>
+
                                 @endif
                                 @endforeach
                             </tbody>
@@ -100,13 +114,13 @@ Meja 1
                 </div>
             </div>
         </div>
-        <!-- End loop -->
         @endforeach
+        <!-- End loop -->
     </div>
     @endif
-
-
-
+    
+    
+    
     @endsection
 
     @section('tabsMenu')
