@@ -118,9 +118,9 @@ Meja 1
         <!-- End loop -->
     </div>
     @endif
-    
-    
-    
+
+
+
     @endsection
 
     @section('tabsMenu')
@@ -142,26 +142,26 @@ Meja 1
                 </div>
             </div>
         </div>
+        <div class="tab">
+            @if (isset($tables))
+            <li class="tab-item different">
+                <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
+                    <i class="fa fa-home"></i>
+                    Orderan Saya
+                </a>
+            </li>
+            <li class="tab-item">
+                <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
+                    <i class="fa fa-cutlery"></i>
+                    Menu
+                </a>
+            </li>
+            @else
+
+            @endif
+        </div>
     </div>
 </form>
-<div class="tab">
-    @if (isset($tables))
-    <li class="tab-item different">
-        <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-            <i class="fa fa-home"></i>
-            Orderan Saya
-        </a>
-    </li>
-    <li class="tab-item">
-        <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-            <i class="fa fa-cutlery"></i>
-            Menu
-        </a>
-    </li>
-    @else
-
-    @endif
-</div>
 @endsection
 
 @section('footer-scripts')
