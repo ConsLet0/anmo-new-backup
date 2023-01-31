@@ -75,6 +75,7 @@ Route::get('edit-meja-makan', [TableController::class, 'edit'])->name('meja.edit
 Route::post('edit-meja-makan', [TableController::class, 'update'])->name('meja.update');
 Route::post('delete-meja-makan', [TableController::class, 'destroy'])->name('meja.destroy');
 Route::get('ajax-meja-makan-search', [TableController::class, 'ajaxSearch'])->name('meja.ajaxSearch');
+
 //Route Backend Order;
 Route::controller(OrderController::class)->middleware('auth')->group(function () {
     Route::get('orderan', 'index')->name('orderan');

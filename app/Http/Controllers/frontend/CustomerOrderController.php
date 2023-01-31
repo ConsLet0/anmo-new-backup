@@ -78,12 +78,6 @@ class CustomerOrderController extends Controller
                     $detailFoods = \App\Models\Food::where('id', $foods[$key])->first();
                     $harga_beli  = $detailFoods->harga_beli;
                     $subtotal    = $qt * $harga_beli;
-                    // $stock_now   = $detailFoods->minimal_stock;
-                    // $stock_new   = $stock_now - $qt;
-
-                    // \App\Models\Food::where('id', $foods[$key])->update([
-                    //     'minimal_stock' => $stock_new
-                    // ]);
 
                     \App\Models\OrderLine::insert([
                         'orders'        => $id_orders,
@@ -107,8 +101,6 @@ class CustomerOrderController extends Controller
                 'message'   => 'Data Orderan Anda Berhasil Di Kirim',
             ]);
 
-
-            // return redirect()->back();
         }
     }
 

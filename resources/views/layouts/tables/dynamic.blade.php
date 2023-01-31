@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
     <title>@yield('title') | Pelanggan</title>
 
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
@@ -22,10 +23,6 @@
     <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
     {{-- Library Jquery Select2 CSS --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
-    {{ Font Quicksand }}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
