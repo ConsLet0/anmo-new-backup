@@ -16,6 +16,8 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email', 80);
+            $table->string('metode_pembayaran', 80);
             $table->enum('status', ['0','1','2'])->default('0');
             $table->integer('no_meja');
             $table->timestamps();

@@ -8,7 +8,6 @@ use App\Http\Controllers\backend\FoodController;
 use App\Http\Controllers\backend\OrderController;
 use App\Http\Controllers\backend\TableController;
 use App\Http\Controllers\backend\UserController;
-use App\Http\Controllers\frontend\CustomerCartController;
 use App\Http\Controllers\frontend\CustomerOrderController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Artisan;
@@ -38,12 +37,6 @@ Route::get('route-cache', function () {
     Artisan::call('route:cache');
     return 'Berhasil Di Route Cache !';
 });
-//Route Frontend
-Route::get('keranjang/no_meja/{no_meja}', [CustomerCartController::class, 'meja1'])->name('keranjang.meja1');
-Route::post('keranjang-belanja', [CustomerCartController::class, 'store'])->name('keranjang_belanja.store');
-Route::post('update-keranjang-belanja', [CustomerCartController::class, 'update'])->name('carts.update');
-Route::post('destroy-keranjang-belanja', [CustomerCartController::class, 'destroy'])->name('carts.destroy');
-Route::post('clear-all/keranjang-belanja', [CustomerCartController::class, 'clear'])->name('keranjang_belanja.clear');
 
 //Route Frontend Orderan Pelanggan;
 Route::get('orderan-pelanggan/no_meja/{no_meja}', [CustomerOrderController::class, 'meja1'])->name('pelanggan.meja1');

@@ -19,10 +19,11 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                        <th>Nama Pengorder</th>
-                                        <th>No Meja</th>
+                                        <th>Nama</th>
+                                        <th>Meja</th>
                                         <th>Item</th>
                                         <th>Status</th>
+                                        <th>Metode</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -52,11 +53,11 @@
                                                     <td>
                                                         @if ($item->status == "0")
                                                             <span class="badge badge-danger badge-pill">
-                                                                Pesanan Anda Sedang Disiapkan !
+                                                                Pesanan Disiapkan !
                                                             </span>
                                                         @elseif($item->status == "1")
                                                             <span class="badge badge-primary badge-pill">
-                                                                Selamat Menikmati Hidangan
+                                                                Selamat Menikmati
                                                             </span>
                                                         @else
                                                             <span class="badge badge-success badge-pill">
@@ -65,9 +66,12 @@
                                                         @endif
                                                     </td>
                                                     <td>
+                                                        {{ $item->metode_pembayaran }}
+                                                    </td>
+                                                    <td>
                                                         <a href="{{ url('detail-orderan-pelanggan/no_meja/'.$item->no_meja.'/'.$item->created_at) }}" class="btn btn-success btn-sm">
                                                             <i class="fa fa-eye" aria-hidden="true"></i>
-                                                            Detail Pesanan
+                                                            Struk Pesanan
                                                         </a>
                                                     </td>
                                                 </tr>
