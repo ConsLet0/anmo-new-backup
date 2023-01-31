@@ -38,6 +38,7 @@ Route::get('route-cache', function () {
     return 'Berhasil Di Route Cache !';
 });
 
+
 //Route Frontend Orderan Pelanggan;
 Route::get('orderan-pelanggan/no_meja/{no_meja}', [CustomerOrderController::class, 'meja1'])->name('pelanggan.meja1');
 Route::post('orderan-pelanggan/checkout', [CustomerOrderController::class, 'store'])->name('pelanggan.store');

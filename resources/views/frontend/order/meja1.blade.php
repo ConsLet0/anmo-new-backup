@@ -1,13 +1,13 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-Meja 1
+    Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
 <div class="row mb-3 text-center">
     <div class="col-md-12">
-        <h4 class="text-uppercase">ANMO CAFE SUKAASIH</h4>
+        <h4 class="text-uppercase">ANMO CAFE SUKAASIH </h4>
     </div>
 </div>
 <div class="row mb-3">
