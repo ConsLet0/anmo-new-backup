@@ -42,7 +42,6 @@ Meja {{ $tables->no_meja }}
     <div class="row mb-3">
         <div class="col-md-12">
             <h5 class="title text-center">
-                <span class="fas fa-hamburger btn btn-danger mb-2"></span>
                 <br>
                 Menu
             </h5>
