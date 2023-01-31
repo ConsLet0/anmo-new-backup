@@ -37,7 +37,6 @@
     white-space: nowrap;
     overflow: auto;
     transition: all 0.5s linear;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.904);
     text-align: center;
 }
 

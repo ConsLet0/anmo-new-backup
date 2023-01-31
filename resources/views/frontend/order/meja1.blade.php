@@ -154,7 +154,6 @@ Meja {{ $tables->no_meja }}
                             </button>
                         </li>
                         @else
-
                         @endif
                     </div>
                 </div>
