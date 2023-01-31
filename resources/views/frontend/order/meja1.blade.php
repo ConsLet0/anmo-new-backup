@@ -56,12 +56,12 @@ Meja 1
                 @foreach ($categories as $category)
                     <div class="col-md-12">
                         <p>
-                            <a class="btn-sm btn btn-success btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->name }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
+                            <a class="btn-sm btn btn-success btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
                                 <span class="fas fa-eye"></span>
                                 {{ $category->name }}
                             </a>
                         </p>
-                        <div class="collapse multi-collapse" id="multiCollapseExample1{{ $category->name }}">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1{{ $category->slug }}">
                             <div class="card card-body">
                                 <div class="table-responsive">
                                     <table id="tableMenuMakanan" class="table table-bordered table-striped">
