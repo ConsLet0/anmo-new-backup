@@ -114,7 +114,6 @@ class CustomerOrderController extends Controller
             ->where('no_meja', $no_meja)
             ->get();
         $orders        = \App\Models\Order::orderBy('id', 'DESC')
-            // ->groupBy('status')
             ->get();
         return view('frontend.order.status-orderan', compact('tables', 'detailTables', 'orders'));
     }
