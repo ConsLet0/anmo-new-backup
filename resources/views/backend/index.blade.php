@@ -128,7 +128,7 @@
                                     <span class="fas fa-search"></span>
                                     Cari
                                 </button>
-                                <button type="button" class="btn btn-success" onclick="tablesToExcel(['table_status_orderan3'], ['Report'], 'Laporan_penjualan_anglo.xls', 'Excel')">
+                                <button type="button" class="btn btn-success" onclick="tablesToExcel(['table_status_orderan3'], ['Report'], 'Laporan_penjualan_anmo.csv', 'Excel')">
                                     <span class="fas fa-table"></span>
                                     Export Data
                                 </button>
@@ -289,5 +289,5 @@
                 ordering:true,
                 info:true,
         });
-    </script>
+    </script>   
 @endsection

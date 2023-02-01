@@ -1,7 +1,7 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-    Meja {{ $tables->no_meja }}
+Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
@@ -24,13 +24,13 @@
                 <img src="{{ url('storage/banner/'.$dataBanner->foto) }}" class="d-block w-100" alt="...">
             </div>
             @else
-                Data Banner 1 Belum Di Upload !
+            Data Banner 1 Belum Di Upload !
             @endif
             <div class="carousel-item">
                 @if (isset($dataBanner2))
                 <img src="{{ url('storage/banner/'.$dataBanner2->foto) }}" class="d-block w-100" alt="...">
                 @else
-                    Data Banner 2 Belum Di Upload !
+                Data Banner 2 Belum Di Upload !
                 @endif
             </div>
         </div>
@@ -71,39 +71,39 @@
                             <tbody>
                                 {{-- Start Loop Food --}}
                                 @foreach ($foods as $food => $item)
-                                    @if ($item->status == 'Tersedia')
-                                        @if ($item->categories->name == $category->name)
-                                            <tr>
-                                                <td>
-                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                                    <input type="number" value="0" name="qty[]" id="" class="form-control">
-                                                    <select hidden name="status" class="form-control">
-                                                        <option selected value="0">Menunggu Konfirmasi</option>
-                                                    </select>
-                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                                </td>
-                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                            </tr>
-                                        @endif
-                                    @else
-                                        @if ($item->categories->name == $category->name)
-                                            <tr>
-                                                <td>
-                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                                    <button type="button" class="btn btn-light" disabled>Sold Out</button>
-                                                    <select hidden name="status" class="form-control">
-                                                        <option selected value="0">Menunggu Konfirmasi</option>
-                                                    </select>
-                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                                </td>
-                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                            </tr>
-                                        @endif
-                                    @endif
+                                @if ($item->status == 'Tersedia')
+                                @if ($item->categories->name == $category->name)
+                                <tr>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                        <input type="number" value="0" name="qty[]" id="" class="form-control">
+                                        <select hidden name="status" class="form-control">
+                                            <option selected value="0">Menunggu Konfirmasi</option>
+                                        </select>
+                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                    </td>
+                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                </tr>
+                                @endif
+                                @else
+                                @if ($item->categories->name == $category->name)
+                                <tr>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                        <button type="button" class="btn btn-light" disabled>Sold Out</button>
+                                        <select hidden name="status" class="form-control">
+                                            <option selected value="0">Menunggu Konfirmasi</option>
+                                        </select>
+                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                    </td>
+                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                </tr>
+                                @endif
+                                @endif
                                 @endforeach
                                 {{-- End Loop Foodd --}}
                             </tbody>
@@ -122,15 +122,17 @@
     <div class="fixed-bottom bg-white">
         <div class="container">
             <div class="row">
-                <div class="col-md-12" style="background-color: #fff;">
-                    <div class="form-group bg-warning text-center">
-                        <label for="name">Informasi Pesanan</label>
-                        <input autofocus type="text" class="form-control" name="name" placeholder="Isi Nama Pemesan">
-                        <span class="text-danger error-text name_error"></span>
-
-                        <input autofocus type="email" class="form-control" name="email" placeholder="Isi Email Pemesan">
-                        <span class="text-danger error-text email_error"></span>
-
+                <div class="col-md-12">
+                    <div class="tab-info form-group text-center">
+                        <label class="people_name" for="name">Informasi Pesanan</label>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Pemesan">
+                            <span class="text-danger error-text name_error"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Masukkan Email Pemesan">
+                            <span class="text-danger error-text email_error"></span>
+                        </div>
                         <select name="metode_pembayaran" class="custom-select">
                             <option value="#">Pilih Metode Bayar</option>
                             <option value="CASH">CASH</option>
