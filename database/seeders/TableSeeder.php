@@ -13,6 +13,10 @@ class TableSeeder extends Seeder
      */
     public function run()
     {
-
+        $table                  =   new \App\Models\Table();
+        $table->no_meja         =   '1';
+        $table->status          =   'Terisi';
+        $table->save();
+        $this->command->info('Data Table Berhasil Di Insert !');
     }
 }

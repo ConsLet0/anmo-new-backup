@@ -71,25 +71,39 @@
                             <tbody>
                                 {{-- Start Loop Food --}}
                                 @foreach ($foods as $food => $item)
-                                @if ($item->status != 'Tidak Tersedia')
-                                @if ($item->categories->name == $category->name)
-                                <tr>
-                                    <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                        <input type="number" value="0" name="qty[]" id="" class="form-control">
-                                        <select hidden name="status" class="form-control">
-                                            <option selected value="0">Menunggu Konfirmasi</option>
-                                        </select>
-                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                    </td>
-                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                </tr>
-                                @endif
-                                @else
-                                Produk Tidak Tersedia
-                                @endif
+                                    @if ($item->status == 'Tersedia')
+                                        @if ($item->categories->name == $category->name)
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                                    <input type="number" value="0" name="qty[]" id="" class="form-control">
+                                                    <select hidden name="status" class="form-control">
+                                                        <option selected value="0">Menunggu Konfirmasi</option>
+                                                    </select>
+                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                                </td>
+                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                            </tr>
+                                        @endif
+                                    @else
+                                        @if ($item->categories->name == $category->name)
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                                    <button type="button" class="btn btn-light" disabled>Sold Out</button>
+                                                    <select hidden name="status" class="form-control">
+                                                        <option selected value="0">Menunggu Konfirmasi</option>
+                                                    </select>
+                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                                </td>
+                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                            </tr>
+                                        @endif
+                                    @endif
                                 @endforeach
                                 {{-- End Loop Foodd --}}
                             </tbody>

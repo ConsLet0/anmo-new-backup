@@ -48,6 +48,7 @@ class OrderController extends Controller
 
     public function getLaporan(Request $request)
     {
+
         $from       = $request->from;
         $to         = $request->to;
 
