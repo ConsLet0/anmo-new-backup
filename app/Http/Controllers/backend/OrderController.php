@@ -48,11 +48,6 @@ class OrderController extends Controller
 
     public function getLaporan(Request $request)
     {
-        // $from   = $request->from . ' ' . '00:00:00';
-        // $to     = $request->to   . ' ' . '23:59:59';
-
-        // $order = \App\Models\Order::whereBetween('created_at', [$from, $to])
-        //     ->get();
 
         $from       = $request->from;
         $to         = $request->to;

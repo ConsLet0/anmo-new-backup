@@ -1,7 +1,7 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-Meja {{ $tables->no_meja }}
+    Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
@@ -24,13 +24,13 @@ Meja {{ $tables->no_meja }}
                 <img src="{{ url('storage/banner/'.$dataBanner->foto) }}" class="d-block w-100" alt="...">
             </div>
             @else
-            Data Banner 1 Belum Di Upload !
+                Data Banner 1 Belum Di Upload !
             @endif
             <div class="carousel-item">
                 @if (isset($dataBanner2))
                 <img src="{{ url('storage/banner/'.$dataBanner2->foto) }}" class="d-block w-100" alt="...">
                 @else
-                Data Banner 2 Belum Di Upload !
+                    Data Banner 2 Belum Di Upload !
                 @endif
             </div>
         </div>
@@ -39,24 +39,23 @@ Meja {{ $tables->no_meja }}
 <form id="orderMakanan" action="{{ route('pelanggan.store') }}" method="POST">
     @csrf
     @if (isset($foods))
-    <div class="row mb-3">
+    <div class="row mb-2">
         <div class="col-md-12">
             <h5 class="title text-center">
-                <br>
-                Menu
+                Our Menu
             </h5>
         </div>
     </div>
-    <hr class="my-3">
     <div class="row" style="margin-block-end: 500px">
         {{-- Start Loop Category --}}
         @foreach ($categories as $category)
         <div class="col-md-12">
             <p>
-                <a class="btn-sm btn btn-success btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
-                    <span class="fas fa-eye"></span>
-                    {{ $category->name }}
-                </a>
+                <button class="dropdown btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
+                    <h4 class="cat-name mt-2">
+                        <i class="fas fa-bars"></i> {{ $category->name }}
+                    </h4>
+                </button>
             </p>
             <div class="collapse multi-collapse" id="multiCollapseExample1{{ $category->slug }}">
                 <div class="card card-body">
@@ -72,25 +71,39 @@ Meja {{ $tables->no_meja }}
                             <tbody>
                                 {{-- Start Loop Food --}}
                                 @foreach ($foods as $food => $item)
-                                @if ($item->status != 'Tidak Tersedia')
-                                @if ($item->categories->name == $category->name)
-                                <tr>
-                                    <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                        <input type="number" value="0" name="qty[]" id="" class="form-control">
-                                        <select hidden name="status" class="form-control">
-                                            <option selected value="0">Menunggu Konfirmasi</option>
-                                        </select>
-                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                    </td>
-                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                </tr>
-                                @endif
-                                @else
-                                Produk Tidak Tersedia
-                                @endif
+                                    @if ($item->status == 'Tersedia')
+                                        @if ($item->categories->name == $category->name)
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                                    <input type="number" value="0" name="qty[]" id="" class="form-control">
+                                                    <select hidden name="status" class="form-control">
+                                                        <option selected value="0">Menunggu Konfirmasi</option>
+                                                    </select>
+                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                                </td>
+                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                            </tr>
+                                        @endif
+                                    @else
+                                        @if ($item->categories->name == $category->name)
+                                            <tr>
+                                                <td>
+                                                    <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                                    <button type="button" class="btn btn-light" disabled>Sold Out</button>
+                                                    <select hidden name="status" class="form-control">
+                                                        <option selected value="0">Menunggu Konfirmasi</option>
+                                                    </select>
+                                                    <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                                    <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                                </td>
+                                                <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                                <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                            </tr>
+                                        @endif
+                                    @endif
                                 @endforeach
                                 {{-- End Loop Foodd --}}
                             </tbody>

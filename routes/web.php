@@ -38,7 +38,6 @@ Route::get('route-cache', function () {
     return 'Berhasil Di Route Cache !';
 });
 
-
 //Route Frontend Orderan Pelanggan;
 Route::get('orderan-pelanggan/no_meja/{no_meja}', [CustomerOrderController::class, 'meja1'])->name('pelanggan.meja1');
 Route::post('orderan-pelanggan/checkout', [CustomerOrderController::class, 'store'])->name('pelanggan.store');
@@ -75,7 +74,6 @@ Route::get('edit-meja-makan', [TableController::class, 'edit'])->name('meja.edit
 Route::post('edit-meja-makan', [TableController::class, 'update'])->name('meja.update');
 Route::post('delete-meja-makan', [TableController::class, 'destroy'])->name('meja.destroy');
 Route::get('ajax-meja-makan-search', [TableController::class, 'ajaxSearch'])->name('meja.ajaxSearch');
-
 //Route Backend Order;
 Route::controller(OrderController::class)->middleware('auth')->group(function () {
     Route::get('orderan', 'index')->name('orderan');
