@@ -19,7 +19,7 @@ class CustomerOrderController extends Controller
         $detailTables = \App\Models\Table::orderBy('id', 'DESC')
             ->where('no_meja', $no_meja)
             ->get();
-        $foods        = \App\Models\Food::orderBy('id', 'DESC')
+        $foods        = \App\Models\Food::orderBy('id', 'ASC')
             ->get();
         $categories    = \App\Models\Category::all();
         $dataBanner    = Banner::first();
@@ -32,9 +32,16 @@ class CustomerOrderController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name'  => 'required|string',
+            'email' => 'required|email',
+            'metode_pembayaran' => 'required',
         ], [
             'name.required' => 'Field Nama Pemesan Wajib Di Isi !',
-            'name.string'   => 'Field Nama Pemsan Harus Berformat Huruf !',
+            'name.string'   => 'Field Nama Pemsan Harus Berformat Alpanumeric !',
+
+            'email.required' => 'Field Email Pemesan Wajib Di Isi !',
+            'email.email'   => 'Field Email Pemesan Harus Berformat Email !',
+
+            'metode_pembayaran.required' => 'Field Metode Pembayaran Wajib Di Pilih !'
         ]);
 
         if ($validator->fails()) {
@@ -50,8 +57,13 @@ class CustomerOrderController extends Controller
                 $qty            = $request->get('qty');
                 $namaPemesan    = $request->get('name');
                 $status         = $request->get('status');
+                $emailPemesan   = $request->get('email');
+                $metodePembayaran = $request->get('metode_pembayaran');
+
                 $id_orders      = \App\Models\Order::insertGetId([
                     'name'      => $namaPemesan,
+                    'email'     => $emailPemesan,
+                    'metode_pembayaran' => $metodePembayaran,
                     'status'    => $status,
                     'no_meja'   => $no_meja,
                     'created_at'=> date('Y-m-d H:i:s'),
@@ -66,12 +78,6 @@ class CustomerOrderController extends Controller
                     $detailFoods = \App\Models\Food::where('id', $foods[$key])->first();
                     $harga_beli  = $detailFoods->harga_beli;
                     $subtotal    = $qt * $harga_beli;
-                    // $stock_now   = $detailFoods->minimal_stock;
-                    // $stock_new   = $stock_now - $qt;
-
-                    // \App\Models\Food::where('id', $foods[$key])->update([
-                    //     'minimal_stock' => $stock_new
-                    // ]);
 
                     \App\Models\OrderLine::insert([
                         'orders'        => $id_orders,
@@ -95,8 +101,6 @@ class CustomerOrderController extends Controller
                 'message'   => 'Data Orderan Anda Berhasil Di Kirim',
             ]);
 
-
-            // return redirect()->back();
         }
     }
 
@@ -154,7 +158,7 @@ class CustomerOrderController extends Controller
                 ->addColumn('action', function ($row) {
                     return  '
                             <div class="btn-group">
-                                <a  href="http://localhost/anglo_cafe/public/detail-orderan-pelanggan/' . $row['name'] . '" class="btn-sm btn btn-success">
+                                <a  href="http://localhost/anmo-new-backup/public/detail-orderan-pelanggan/' . $row['name'] . '" class="btn-sm btn btn-success">
                                     <i class="far fa-eye"></i>
                                     Struk Pesanan
                                 </a>

@@ -148,14 +148,15 @@
                     <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama Pengorder</th>
+                            <th>Nama</th>
                             <th>Meja</th>
+                            <th>Metode</th>
+                            <th>Email</th>
                             <th>Item</th>
                             <th>Harga</th>
                             <th>Qty</th>
                             <th>Subtotal</th>
                             <th>Tanggal</th>
-                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -176,6 +177,12 @@
                                         {{ $item->order->no_meja }}
                                     </td>
                                     <td>
+                                        {{ $item->order->metode_pembayaran }}
+                                    </td>
+                                    <td>
+                                        {{ $item->order->email }}
+                                    </td>
+                                    <td>
                                         {{ $item->food->name }}
                                     </td>
                                     <td>
@@ -189,15 +196,6 @@
                                     </td>
                                     <td>
                                         {{ $item->order->created_at }}
-                                    </td>
-                                    <td>
-                                        @if ($item->order->status == '0')
-                                            Pesanan Masuk
-                                        @elseif ($item->order->status == '1')
-                                            Pesanan Dihidangkan
-                                        @else
-                                            Selesai
-                                        @endif
                                     </td>
                                 </tr>
                             @endif

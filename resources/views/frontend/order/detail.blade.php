@@ -24,14 +24,24 @@
                         <td><b>{{ $orders->created_at }}</b></td>
                     </tr>
                     <tr>
-                        <td><b>NO. MEJA</b></td>
+                        <td><b>MEJA</b></td>
                         <td><b>:</b></td>
                         <td><b>{{ $tables->no_meja }}</b></td>
                     </tr>
                     <tr>
-                        <td><b>NAMA PEMESAN</b></td>
+                        <td><b>NAMA</b></td>
                         <td><b>:</b></td>
                         <td><b>{{ strtoupper($orders->name) }}</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>EMAIL</b></td>
+                        <td><b>:</b></td>
+                        <td><b>{{ strtoupper($orders->email) }}</b></td>
+                    </tr>
+                    <tr>
+                        <td><b>METODE BAYAR</b></td>
+                        <td><b>:</b></td>
+                        <td><b>{{ strtoupper($orders->metode_pembayaran) }}</b></td>
                     </tr>
                 </tbody>
             </table>
@@ -78,7 +88,11 @@
                 </tr>
             </table>
             <div class="footer">
-                <h5><b>TERIMA KASIH TELAH MELAKUKAN PEMBAYARAN</b></h5>
+                @if ($orders->status != '2')
+                    <h5><b>TRANSAKSI PEMBAYARAN DILAKUKAN <br>DI KASIR TERIMA KASIH</b></h5>
+                @else
+                    <h5><b>TERIMA KASIH TELAH MELAKUKAN PEMBAYARAN</b></h5>
+                @endif
             </div>
             {{-- <span style="text-align: center">-----------------</span> --}}
         </div>

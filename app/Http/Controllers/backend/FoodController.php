@@ -77,13 +77,11 @@ class FoodController extends Controller
             'name'          =>  'required',
             'photo'         =>  'max:2048',
             'harga_beli'    =>  'required',
-            'minimal_stock' =>  'required',
             'status'        =>  'required',
         ], [
             'name.required'         =>  'Field Nama Makanan / Minuman Wajib Di Isi !',
             'photo.max'             => 'Field Foto Makanan / Minuman Maksimal Ukuran 2Mb !',
             'harga_beli.required'   => 'Field Harga Beli Makanan / Minuman Wajib Di Isi !',
-            'minimal_stock.required'         =>  'Field Stock Makanan / Minuman Wajib Di Isi !',
             'status.required'       => 'Field Status Makanan / Minuman Wajib Di Pilih !',
         ]);
 
@@ -102,7 +100,6 @@ class FoodController extends Controller
             $food->name         = $request->get('name');
             $food->photo        = $filename_makanan;
             $food->harga_beli   = $request->get('harga_beli');
-            $food->minimal_stock = $request->get('minimal_stock');
             $food->slug         = \Str::slug($request->get('name'));
             $food->status       = $request->get('status');
             $food->category_id  = $request->get('category_id');
@@ -130,13 +127,11 @@ class FoodController extends Controller
             'name'          =>  'required',
             'photo'         =>  'max:2048',
             'harga_beli'    =>  'required',
-            'minimal_stock' =>  'required',
             'status'        =>  'required',
         ], [
             'name.required'         =>  'Field Nama Makanan / Minuman Wajib Di Isi !',
             'photo.max'             => 'Field Foto Makanan / Minuman Maksimal Ukuran 2Mb !',
             'harga_beli.required'   => 'Field Harga Beli Makanan / Minuman Wajib Di Isi !',
-            'minimal_stock.required'         =>  'Field Minimal Stock Makanan / Minuman Wajib Di Isi !',
             'status.required'       => 'Field Status Makanan / Minuman Wajib Di Pilih !',
         ]);
 
@@ -168,7 +163,6 @@ class FoodController extends Controller
             $food->name         = $request->get('name');
             $food->photo        = $save_photo;
             $food->harga_beli   = $request->get('harga_beli');
-            $food->minimal_stock = $request->get('minimal_stock');
             $food->slug         = \Str::slug($request->get('name'));
             $food->status       = $request->get('status');
             $food->category_id  = $request->get('category_id');

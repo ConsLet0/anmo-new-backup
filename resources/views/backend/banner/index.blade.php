@@ -155,7 +155,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                @if (isset($dataBanner))
+                                @if (isset($dataBanner2))
                                     {{ $dataBanner2->name }}
                                 @else
                                     Data Belum Tersedia !

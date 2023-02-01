@@ -55,14 +55,6 @@
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="stock">Stock</label>
-                                <input type="number" name="minimal_stock" id="minimal_stock_edit" class="form-control"
-                                    placeholder="Masukan Minimal Stock Makanan / Minuman">
-                                <span class="text-danger error-text minimal_stock_error_edit"></span>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
                                 <label for="status">Status Makanan</label>
                                 <select name="status" id="status_edit" class="custom-select">
                                     <option value="Tersedia">Tersedia</option>
