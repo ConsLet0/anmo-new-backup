@@ -114,44 +114,13 @@ Meja {{ $tables->no_meja }}
                         <label for="name">Informasi Pesanan</label>
                         <input autofocus type="text" class="form-control" name="name" placeholder="Isi Nama Pemesan">
                         <span class="text-danger error-text name_error"></span>
-
-                        <input autofocus type="email" class="form-control" name="email" placeholder="Isi Email Pemesan">
-                        <span class="text-danger error-text email_error"></span>
-
-                        <select name="metode_pembayaran" class="custom-select">
-                            <option disabled value="#">Pilih Metode Bayar</option>
-                            <option value="CASH">CASH</option>
-                            <option value="CASHLESS">CASHLESS</option>
-                            <option value="DEBIT">DEBIT</option>
-                        </select>
-                        <span class="text-danger error-text metode_pembayaran_error"></span>
                     </div>
                 </div>
-                <div class="col-md-12" style="background-color: #fff;">
-                    <div class="tab">
-                        @if (isset($tables))
-                        <li class="tab-item different">
-                            <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                                <i class="fa fa-home"></i>
-                                List Orderan
-                            </a>
-                        </li>
-                        <li class="tab-item">
-                            <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                                <i class="fa fa-cutlery"></i>
-                                Menu
-                            </a>
-                        </li>
-                        <li class="tab-item">
-                            <!-- Button trigger modal -->
-                            <button type="submit" class="btn btn-danger">
-                                <span class="fas fa-cart-arrow-down"></span>
-                                Pesan
-                            </button>
-                        </li>
-                        @else
-                        @endif
-                    </div>
+                <div class="col-md-12 mb-3" style="background-color: #fff;">
+                    <button type="submit" class="btn btn-danger btn-block">
+                        <i class="fa fa-gift"></i>
+                        Pesan Sekarang
+                    </button>
                 </div>
             </div>
         </div>

@@ -101,8 +101,6 @@ class CustomerOrderController extends Controller
                 'message'   => 'Data Orderan Anda Berhasil Di Kirim',
             ]);
 
-
-            // return redirect()->back();
         }
     }
 
@@ -116,7 +114,6 @@ class CustomerOrderController extends Controller
             ->where('no_meja', $no_meja)
             ->get();
         $orders        = \App\Models\Order::orderBy('id', 'DESC')
-            // ->groupBy('status')
             ->get();
         return view('frontend.order.status-orderan', compact('tables', 'detailTables', 'orders'));
     }
