@@ -15,7 +15,7 @@ class TableSeeder extends Seeder
     {
         $table                  =   new \App\Models\Table();
         $table->no_meja         =   '1';
-        $table->status          =   'Terisi';
+        $table->status          =   'Kosong';
         $table->save();
         $this->command->info('Data Table Berhasil Di Insert !');
     }

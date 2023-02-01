@@ -119,7 +119,7 @@ Meja {{ $tables->no_meja }}
                         <span class="text-danger error-text email_error"></span>
 
                         <select name="metode_pembayaran" class="custom-select">
-                            <option value="#">Pilih Metode Bayar</option>
+                            <option disabled value="#">Pilih Metode Bayar</option>
                             <option value="CASH">CASH</option>
                             <option value="CASHLESS">CASHLESS</option>
                             <option value="DEBIT">DEBIT</option>
@@ -128,10 +128,6 @@ Meja {{ $tables->no_meja }}
                     </div>
                 </div>
                 <div class="col-md-12" style="background-color: #fff;">
-                    {{-- <button type="submit" class="btn btn-danger btn-block">
-                        <i class="fas fa-cart-plus"></i>
-                        Pesan Sekarang
-                    </button> --}}
                     <div class="tab">
                         @if (isset($tables))
                         <li class="tab-item different">
