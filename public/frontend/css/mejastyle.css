@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+*{
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+}
 
 .description{
     font-family: 'Quicksand', sans-serif;
@@ -24,6 +26,29 @@
     font-size: 1rem;
     color: #347fc9;
     text-decoration: none;
+}
+
+.title{
+    font-size: 1.2rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #347fc9; 
+}
+
+.dropdown{
+    background-color: #273238;
+}
+
+.cat-name{
+    font-family: 'Quicksand', sans-serif;
+    font-size: .8rem;
+    font-weight: 500;
+    color: #ffff;
+}
+
+.table .input th{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
 }
 
 .tab {
