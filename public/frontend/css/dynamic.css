@@ -1,16 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+.title{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; 
+    font-size: 2rem;
+    color: #343a40;
+}
+
 .tab {
     width: 100%;
-    margin: auto;
     padding: 0 2em;
     border-radius: 0.5rem;
-    background-color: rgb(224, 162, 28);
+    background-color: #273238;;
     line-height: 5em;
     font-weight: bold;
     font-size: 12px;
     white-space: nowrap;
     overflow: auto;
     transition: all 0.5s linear;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.904);
     text-align: center;
 }
 
@@ -54,15 +61,75 @@
 }
 
 .item-link:hover {
-    color: #297;
-    text-decoration: underline;
+    color: #347fc9;
+    text-decoration: none;
 }
 
 .tab-indicator {
     height: 3px;
-    background-color: yellow;
+    background-color: #273238;;
     border-radius: 3px 3px 0 0;
     grid-column: var(--index) / span 1 !important;
     grid-row: 1/2;
     align-self: end;
+}
+
+@media only screen and (min-width: 400px) {
+    /* For tablets: */
+    .description{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700; 
+    }
+    
+    .logo{
+        width: 100px;
+    }
+    
+    .description .title{  
+        font-size: 1rem;
+        font-weight: 700; 
+        color: #273238;
+    }
+    
+    .description a{   
+        font-size: .8rem;
+        color: #79909b;
+        text-decoration: none;
+    }
+    
+    .description .info a{   
+        font-size: .8rem;
+        color: #347fc9;
+        text-decoration: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    /* For tablets: */
+    .description{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700; 
+    }
+    
+    .logo{
+        width: 100px;
+    }
+    
+    .description .title{  
+        font-size: 1.2rem;
+        font-weight: 700; 
+        color: #273238;
+    }
+    
+    .description a{   
+        font-size: .9rem;
+        color: #79909b;
+        text-decoration: none;
+    }
+    
+    .description .info a{   
+        font-size: .9rem;
+        color: #347fc9;
+        text-decoration: none;
+    }
 }

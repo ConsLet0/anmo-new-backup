@@ -86,7 +86,6 @@ class CustomerOrderController extends Controller
                         'qty'           => $qt,
                         'harga_beli'    => $harga_beli,
                         'subtotal'      => $subtotal,
-                        // 'status'        => $status,
                         'created_at'    => date('Y-m-d H:i:s'),
                         'updated_at'    => date('Y-m-d H:i:s')
                     ]);
@@ -95,12 +94,11 @@ class CustomerOrderController extends Controller
             } catch (\Exception $e) {
                 $e->getMessage();
             }
-
+            
             return response()->json([
                 'status'    => 200,
                 'message'   => 'Data Orderan Anda Berhasil Di Kirim',
             ]);
-
 
             // return redirect()->back();
         }
@@ -116,6 +114,7 @@ class CustomerOrderController extends Controller
             ->where('no_meja', $no_meja)
             ->get();
         $orders        = \App\Models\Order::orderBy('id', 'DESC')
+            // ->groupBy('status')
             ->get();
         return view('frontend.order.status-orderan', compact('tables', 'detailTables', 'orders'));
     }

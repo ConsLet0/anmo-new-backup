@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
     <title>@yield('title') | Pelanggan</title>
-
+    
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     {{-- Font Awesome --}}
     <script src="https://kit.fontawesome.com/e0e5d17da7.js" crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('sweetalert/sweetalert2.min.css') }}">
     {{-- Toastr --}}
     <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
-    {{-- Include Style dibawah dijadikan style ini --}}
+    {{-- Page Styling --}}
 	<link href="{{ asset('frontend/css/mejastyle.css') }}" rel="stylesheet">
     {{-- Library Jquery Select2 CSS --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />

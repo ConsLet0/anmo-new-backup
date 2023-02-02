@@ -34,10 +34,9 @@
     <!-- Bootstrap 4 -->
     <script src="{{ asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
     {{-- Datatable --}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-html5-2.3.3/b-print-2.3.3/date-1.2.0/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/jszip-2.5.0/dt-1.13.1/b-2.3.3/b-html5-2.3.3/b-print-2.3.3/date-1.2.0/datatables.min.js"></script>
+    <script src="{{ asset('datatable/jquery.dataTables.min.js') }}"></script>
+    <script src="//cdn.datatables.net/plug-ins/1.11.4/api/fnReloadAjax.js"></script>
+    <script src="{{ asset('datatable/dataTables.bootstrap4.min.js') }}"></script>
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Tempusdominus Bootstrap 4 -->
@@ -52,6 +51,7 @@
     <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
     <title>@yield('title') | ANMO CAFE SUKAASIH</title>
 </head>
 
@@ -115,23 +115,19 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
-                <img src="{{ asset('backend/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
+            <a href="{{ route('dashboard') }}" class="brand-link">
+                <img src="{{ asset('images/logo-anmo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">ANMO CAFE SUKAASIH</span>
+                <span class="brand-text font-weight-light">Admin Menu Anmo</span>
             </a>
 
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('backend/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2"
-                            alt="User Image">
-                    </div>
                     <div class="info">
-                        <a href="#" class="d-block">
-                            {{ auth()->user()->name }}
+                        <a href="{{ route('dashboard') }}" class="d-block">
+                            Welcome {{ auth()->user()->name }} !
                         </a>
                     </div>
                 </div>
@@ -200,7 +196,7 @@
                                 class="nav-link {{ request()->is('banner-promo') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-bullhorn"></i>
                                 <p>
-                                    Banner Promo
+                                    User Banner
                                 </p>
                             </a>
                         </li>
