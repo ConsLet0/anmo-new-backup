@@ -1,72 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.frontend')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Administrator</title>
+@section('title')
+    Login
+@endsection
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/fontawesome-free/css/all.min.css')}}">
-    <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="{{asset('backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="{{asset('backend/dist/css/adminlte.min.css')}}">
-</head>
-
-<body class="hold-transition login-page">
-    <div class="login-box">
-        <!-- /.login-logo -->
-        <div class="card card-outline card-primary">
-            <div class="card-header text-center">
-                <a href="/login" class="h1"><b>Admin</b>LTE</a>
-                <div class="card-body">
-                </div>
+@section('content')
+<div class="container" style="margin-bottom: 80px">
+    <div class="row">
+        <div class="col-md-4 m-auto">
+            <div class="login-form"><!--login form-->
+                <h2>Login Administrator</h2>
                 <form action="{{ route('login') }}" method="POST">
-                    <p class="login-box-msg">Sign In Administrator Anmo</p>
                     @csrf
-                    <div class="input-group mb-3">
-                        <input type="email" placeholder="Email Goes Here" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror">
-                        <div class="input-group-text">
-                            <span class="fas fa-envelope"></span>
-                        </div>
-                        @error('email')
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email Goes Here" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror">
+                    @error('email')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
-                        @enderror
-                    </div>
-                    <div class="input-group mb-3">
-                        <input type="password" placeholder="Password Goes Here" id="password" name="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror">
-                        <div class="input-group-append">
-                            <div class="input-group-text">
-                                <span class="fas fa-lock"></span>
-                            </div>
-                        </div>
-                        @error('password')
+                    @enderror
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Password Goes Here" id="password" name="password" value="{{ old('password') }}" class="form-control @error('password') is-invalid @enderror"/>
+                    @error('password')
                         <div class="alert alert-danger mt-2">
                             {{ $message }}
                         </div>
-                        @enderror
-                    </div>
-                    <div class="row">
-                        <div class="col-4">
-                            <button type="submit" class="btn btn-block btn-primary">Log In</button>
-                        </div>
-                    </div>
+                    @enderror
+                    <button type="submit" class="btn btn-default btn-block">Login</button>
                 </form>
-            </div>
+            </div><!--/login form-->
         </div>
     </div>
+</div>
+@endsection
 
-    <!-- jQuery -->
-    <script src="{{asset('backend/plugins/jquery/jquery.min.js')}}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{asset('backend/dist/js/adminlte.min.js')}}"></script>
-</body>
-
-</html>
+@section('footer-scripts')
+@endsection
