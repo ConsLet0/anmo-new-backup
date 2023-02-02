@@ -50,6 +50,16 @@ class CustomerOrderController extends Controller
                 'error'     => $validator->errors()->toArray(),
             ]);
         } else {
+            $path = 'storage/proof-of-payment/';
+            $proofOfPayment = $request->file('proof_of_payment');
+
+            if ($request->metode_pembayaran === 'CASHLESS' && !$proofOfPayment) {
+                return response()->json([
+                    'status'    => 400,
+                    'error'     => ['Bukti pembayaran harus di isi jika metode pembayaran cashless'],
+                ]); 
+            }
+
             try {
                 $foods          = $request->get('foods');
                 $tables         = $request->get('tables');
@@ -60,7 +70,7 @@ class CustomerOrderController extends Controller
                 $emailPemesan   = $request->get('email');
                 $metodePembayaran = $request->get('metode_pembayaran');
 
-                $id_orders      = \App\Models\Order::insertGetId([
+                $input = [
                     'name'      => $namaPemesan,
                     'email'     => $emailPemesan,
                     'metode_pembayaran' => $metodePembayaran,
@@ -68,7 +78,14 @@ class CustomerOrderController extends Controller
                     'no_meja'   => $no_meja,
                     'created_at'=> date('Y-m-d H:i:s'),
                     'updated_at'=> date('Y-m-d H:i:s'),
-                ]);
+                ];
+
+                if ($proofOfPayment) {
+                    $input['proof_of_payment'] = $proofOfPayment->getClientOriginalName();
+                    $proofOfPayment->move($path, $input['proof_of_payment']);
+                }
+
+                $id_orders = \App\Models\Order::insertGetId($input);
 
                 foreach ($qty as $key => $qt) {
                     if ($qt == 0) {

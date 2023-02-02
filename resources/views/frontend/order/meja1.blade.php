@@ -48,10 +48,13 @@
     </div>
     <div class="row" style="margin-block-end: 500px">
         {{-- Start Loop Category --}}
+        @php
+        $index = 0;
+        @endphp
         @foreach ($categories as $category)
         <div class="col-md-12">
             <p>
-                <button class="dropdown btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
+                <button type="button" class="dropdown btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
                     <h4 class="cat-name mt-2">
                         <i class="fas fa-bars"></i> {{ $category->name }}
                     </h4>
@@ -75,13 +78,13 @@
                                 @if ($item->categories->name == $category->name)
                                 <tr>
                                     <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                        <input type="number" value="0" name="qty[]" id="" class="form-control">
+                                        <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
+                                        <input type="number" value="0" name="qty[{{$index}}]" id="" class="form-control">
                                         <select hidden name="status" class="form-control">
                                             <option selected value="0">Menunggu Konfirmasi</option>
                                         </select>
                                         <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
                                     </td>
                                     <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
                                     <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
@@ -91,13 +94,13 @@
                                 @if ($item->categories->name == $category->name)
                                 <tr>
                                     <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
+                                        <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
                                         <button type="button" class="btn btn-light" disabled>Sold Out</button>
                                         <select hidden name="status" class="form-control">
                                             <option selected value="0">Menunggu Konfirmasi</option>
                                         </select>
                                         <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
                                     </td>
                                     <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
                                     <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
@@ -112,6 +115,9 @@
                 </div>
             </div>
         </div>
+        @php
+        $index++;
+        @endphp
         @endforeach
         {{-- End Loop Category --}}
     </div>
@@ -133,15 +139,21 @@
                             <input type="email" class="form-control" name="email" placeholder="Masukkan Email Pemesan">
                             <span class="text-danger error-text email_error"></span>
                         </div>
-                        <select name="metode_pembayaran" class="custom-select">
+                        <select name="metode_pembayaran" class="custom-select" id="paymentMethod">
                             <option value="#">Pilih Metode Bayar</option>
                             <option value="CASH">CASH</option>
                             <option value="CASHLESS">CASHLESS</option>
                             <option value="DEBIT">DEBIT</option>
                         </select>
                         <span class="text-danger error-text metode_pembayaran_error"></span>
+
+                    </div>
+                    <div class="form-group" id="proofOfPayment" style="display: none">
+                        <input type="file" accept="image/*, application/pdf" class="form-control" name="proof_of_payment" id="proofOfPaymentInput">
+                        <span class="text-danger error-text email_error"></span>
                     </div>
                 </div>
+
                 <div class="col-md-12" style="background-color: #fff;">
                     <div class="tab">
                         @if (isset($tables))
@@ -176,4 +188,19 @@
 
 @section('footer-scripts')
 @include('frontend.order.scripts')
+
+<script>
+    const paymentMethod = document.getElementById('paymentMethod');
+    const proofOfPayment = document.getElementById('proofOfPayment');
+    const proofOfPaymentInput = document.getElementById('proofOfPaymentInput');
+
+    paymentMethod.addEventListener('change', () => {
+        if (paymentMethod.value === 'CASHLESS') {
+            proofOfPayment.style.display = 'block';
+        } else {
+            proofOfPayment.style.display = 'none';
+            proofOfPaymentInput.value = '';
+        }
+    })
+</script>
 @endsection

@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('metode_pembayaran', 80);
             $table->enum('status', ['0','1','2'])->default('0');
             $table->integer('no_meja');
+            $table->string('proof_of_payment')->nullable();
             $table->timestamps();
         });
     }
