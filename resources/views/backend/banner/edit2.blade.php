@@ -1,20 +1,20 @@
 @extends('layouts.backend')
 
 @section('title')
-    Edit Banner Promo 2
+    Edit User Banner 2
 @endsection
 
 @section('pageTitle')
-    Edit Banner Promo 2
+    Edit User Banner 2
 @endsection
 
 @section('content')
 <div class="row">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>
-                    Edit Banner Promo 2
+                    Edit User Banner 2
                 </h5>
             </div>
             <div class="card-body">
@@ -43,7 +43,7 @@
                         @endif
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-warning btn-block">
+                        <button type="submit" class="btn btn-success btn-block">
                             Update
                         </button>
                     </div>

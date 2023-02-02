@@ -51,6 +51,7 @@
     <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.min.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
     <title>@yield('title') | ANMO CAFE SUKAASIH</title>
 </head>
 
@@ -114,7 +115,7 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="{{ route('dashboard') }}" class="brand-link">
                 <img src="{{ asset('images/logo-anmo.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Admin Menu Anmo</span>
@@ -124,12 +125,8 @@
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                    <div class="image">
-                        <img src="{{ asset('images/logo-anmo.png') }}" class="img-circle elevation-2"
-                            alt="User Image">
-                    </div>
                     <div class="info">
-                        <a href="#" class="d-block">
+                        <a href="{{ route('dashboard') }}" class="d-block">
                             Welcome {{ auth()->user()->name }} !
                         </a>
                     </div>
@@ -199,7 +196,7 @@
                                 class="nav-link {{ request()->is('banner-promo') ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-bullhorn"></i>
                                 <p>
-                                    Banner Promo
+                                    User Banner
                                 </p>
                             </a>
                         </li>

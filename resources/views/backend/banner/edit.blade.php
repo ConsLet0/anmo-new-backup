@@ -1,20 +1,20 @@
 @extends('layouts.backend')
 
 @section('title')
-    Edit Banner Promo
+    Edit User Banner
 @endsection
 
 @section('pageTitle')
-    Edit Banner Promo
+    Edit User Banner
 @endsection
 
 @section('content')
 <div class="row">
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>
-                    Edit Banner Promo
+                    Edit User Banner
                 </h5>
             </div>
             <div class="card-body">

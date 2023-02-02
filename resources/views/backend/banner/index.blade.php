@@ -1,18 +1,18 @@
 @extends('layouts.backend')
 
 @section('title')
-    Banner Promo
+    User Banner
 @endsection
 
 @section('pageTitle')
-    Banner Promo
+    User Banner
 @endsection
 
 @section('content')
 <div class="row">
     <div class="col-md-4">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>
                     Upload Banner 1
                 </h5>
@@ -37,7 +37,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-warning btn-block">
+                        <button type="submit" class="btn btn-dark btn-block">
                             Simpan
                         </button>
                     </div>
@@ -47,7 +47,7 @@
     </div>
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>Preview Banner 1</h5>
             </div>
             <div class="card-body">
@@ -105,7 +105,7 @@
 <div class="row">
     <div class="col-md-4">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>
                     Upload Banner 2
                 </h5>
@@ -130,7 +130,7 @@
                         @enderror
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-warning btn-block">
+                        <button type="submit" class="btn btn-dark btn-block">
                             Simpan
                         </button>
                     </div>
@@ -140,7 +140,7 @@
     </div>
     <div class="col-md-8">
         <div class="card">
-            <div class="card-header bg-warning">
+            <div class="card-header bg-dark">
                 <h5>Preview Banner 2</h5>
             </div>
             <div class="card-body">

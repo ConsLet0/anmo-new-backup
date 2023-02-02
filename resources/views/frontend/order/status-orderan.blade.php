@@ -1,7 +1,7 @@
 @extends('layouts.tables.dynamic')
 
 @section('title')
-    Status Orderan
+    Status Orderan Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
@@ -9,8 +9,8 @@
     <div class="row" style="margin-top: 50px">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header bg-warning text-white text-uppercase text-center">
-                    <h4>Status Orderan No Meja {{ $tables->no_meja }}</h4>
+                <div class="card-header text-white text-uppercase text-center">
+                    <h4 class="title">Status Orderan No Meja {{ $tables->no_meja }}</h4>
                 </div>
                 <div class="card-body">
                     <div class="row">
@@ -96,14 +96,14 @@
             <div class="tab">
                 <li class="tab-item different">
                     <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                        <i class="fa fa-home"></i>
-                        Orderan Saya
+                        <i class="fas fa-list"></i>
+                        List Order
                     </a>
                 </li>
                 <li class="tab-item">
                     <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                        <i class="fa fa-cutlery"></i>
-                        Menu
+                        <i class="fas fa-utensils"></i>
+                        Menu Utama
                     </a>
                 </li>
             </div>

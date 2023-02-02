@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{ asset('sweetalert/sweetalert2.min.css') }}">
     {{-- Toastr --}}
     <link rel="stylesheet" href="{{ asset('toastr/toastr.min.css') }}">
-    {{-- Include Style dibawah dijadikan style ini --}}
+    {{-- Page Styling --}}
 	<link href="{{ asset('frontend/css/mejastyle.css') }}" rel="stylesheet">
     {{-- Library Jquery Select2 CSS --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />

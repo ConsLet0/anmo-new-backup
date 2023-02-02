@@ -1,7 +1,7 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-Meja {{ $tables->no_meja }}
+    Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
@@ -143,28 +143,24 @@ Meja {{ $tables->no_meja }}
                     </div>
                 </div>
                 <div class="col-md-12" style="background-color: #fff;">
-                    {{-- <button type="submit" class="btn btn-danger btn-block">
-                        <i class="fas fa-cart-plus"></i>
-                        Pesan Sekarang
-                    </button> --}}
                     <div class="tab">
                         @if (isset($tables))
                         <li class="tab-item different">
                             <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                                <i class="fa fa-home"></i>
-                                List Orderan
+                                <i class="fas fa-list"></i>
+                                List Order
                             </a>
                         </li>
                         <li class="tab-item">
                             <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                                <i class="fa fa-cutlery"></i>
-                                Menu
+                                <i class="fas fa-utensils"></i>
+                                Menu Utama
                             </a>
                         </li>
                         <li class="tab-item">
                             <!-- Button trigger modal -->
-                            <button type="submit" class="btn btn-danger">
-                                <span class="fas fa-cart-arrow-down"></span>
+                            <button type="submit" class="btn btn-primary">
+                                <span class="fas fa-cart-plus"></span>
                                 Pesan
                             </button>
                         </li>
