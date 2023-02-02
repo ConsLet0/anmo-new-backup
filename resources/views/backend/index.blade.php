@@ -128,10 +128,7 @@
                                     <span class="fas fa-search"></span>
                                     Cari
                                 </button>
-                                <a href="#" type="button" class="btn btn-success">
-                                    <span class="fas fa-table"></span> Export Excel
-                                </a>
-                                <a href="{{ route('dashboard') }}" class="btn bt    n-warning">
+                                <a href="{{ route('dashboard') }}" class="btn btn-warning">
                                     <span class="fa fa-refresh"></span>
                                     Segarkan
                                 </a>
@@ -200,6 +197,37 @@
                             @endif
                         @endforeach
                     </tbody>
+                    {{-- <tfoot>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <th>Grand Total :</th>
+                            <th>
+                                @php
+                                    $grandQty = 0;
+                                @endphp
+                                @foreach ($order as $item)
+                                    @php
+                                        $grandQty = $grandQty + $item->totalQty();
+                                    @endphp
+                                @endforeach
+                                {{ $grandQty }} Item
+                            </th>
+                            <th>
+                                @php
+                                    $grandTotal = 0;
+                                @endphp
+                                @foreach ($order as $item)
+                                    @php
+                                        $grandTotal = $grandTotal + $item->subTotal();
+                                    @endphp
+                                @endforeach
+                                Rp. {{ number_format($grandTotal,0,",",".") }}
+                            </th>
+                            <th></th>
+                        </tr>
+                    </tfoot> --}}
                 </table>
                 <table class="table table-borderless">
                     <tbody>
@@ -247,7 +275,6 @@
 @endsection
 
 @section('footer-scripts')
-
     <script>
             $('#table_status_orderan3').DataTable({
                 responsive: true,
