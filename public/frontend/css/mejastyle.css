@@ -11,18 +11,24 @@
     width: 100px;
 }
 
-.description .title{   
+.description .title{
+    font-family: 'Quicksand', sans-serif;   
+    font-weight: 700; 
     font-size: 1.5rem;
     color: #273238;
 }
 
 .description a{   
     font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700; 
     color: #79909b;
     text-decoration: none;
 }
 
-.description .info a{   
+.description .info a{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;    
     font-size: 1rem;
     color: #347fc9;
     text-decoration: none;
@@ -33,6 +39,14 @@
     font-family: 'Quicksand', sans-serif;
     font-weight: 700;
     color: #347fc9; 
+}
+
+.people_name{
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    color: #273238;
+
 }
 
 .dropdown{
@@ -53,12 +67,13 @@
 
 .tab {
     width: 100%;
-    padding: 0 2em;
+    padding: 0 2rem;
     border-radius: 0.5rem;
-    background-color: rgb(224, 162, 28);
-    line-height: 5em;
-    font-weight: bold;
-    font-size: 12px;
+    background-color: #273238;
+    line-height: 3rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
     white-space: nowrap;
     overflow: auto;
     transition: all 0.5s linear;
@@ -93,6 +108,7 @@
 }
 
 .tab-item.active .item-link {
+    text-decoration: none;
     color: rgb(74, 167, 167);
 }
 
@@ -105,8 +121,8 @@
 }
 
 .item-link:hover {
-    color: #297;
-    text-decoration: underline;
+    color: #347fc9;
+    text-decoration: none;
 }
 
 .tab-indicator {

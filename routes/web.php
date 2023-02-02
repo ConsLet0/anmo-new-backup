@@ -47,6 +47,7 @@ Route::get('detail-orderan-pelanggan/no_meja/{no_meja}/{created_at}', [CustomerO
 //Route Backend
 Route::get('/home', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('laporanPenjualan', [DashboardController::class, 'laporanPenjualan'])->name('dashboard.laporanPenjualan');
+
 //Route Backend Kategori Makanan
 Route::get('kategori', [CategoryController::class, 'index'])->name('kategori')->middleware('auth');
 Route::get('fetch-kategori', [CategoryController::class, 'fetch_category'])->name('kategori.fetch')->middleware('auth');

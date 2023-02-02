@@ -1,11 +1,11 @@
 @extends('layouts.backend')
 
 @section('title')
-    Dashboard
+Dashboard
 @endsection
 
 @section('pageTitle')
-    Dashboard
+Dashboard
 @endsection
 
 @section('content')
@@ -17,8 +17,8 @@
                 <h3>{{ $pesananMasuk }}</h3>
 
                 <p>Pesanan Masuk</p>
-                </div>
-                <div class="icon">
+            </div>
+            <div class="icon">
                 <i class="ion ion-bag"></i>
             </div>
             <a href="{{ route('orderan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
@@ -32,8 +32,8 @@
                 <h3>{{ $pesananDihidangkan }}</h3>
 
                 <p>Pesanan Dihidangkan</p>
-                </div>
-                <div class="icon">
+            </div>
+            <div class="icon">
                 <i class="ion ion-stats-bars"></i>
             </div>
             <a href="{{ route('orderan.pesananDihidangkan') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
@@ -47,11 +47,11 @@
                 <h3>{{ $pesananSelesai }}</h3>
 
                 <p>Pesanan Selesai</p>
-                </div>
-                <div class="icon">
+            </div>
+            <div class="icon">
                 <i class="ion ion-person-add"></i>
-                </div>
-                <a href="{{ route('orderan.pesananSelesai') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+            <a href="{{ route('orderan.pesananSelesai') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
     <!-- ./col -->
@@ -60,26 +60,26 @@
         <div class="small-box bg-danger">
             <div class="inner">
                 @php
-                    $totalPendapatan = 0;
+                $totalPendapatan = 0;
                 @endphp
                 @foreach ($orderLine as $item)
-                    @if ($item->order->status != "2")
+                @if ($item->order->status != "2")
 
-                    @else
-                        @php
-                            $totalPendapatan = $totalPendapatan + $item->subtotal;
-                        @endphp
-                    @endif
+                @else
+                @php
+                $totalPendapatan = $totalPendapatan + $item->subtotal;
+                @endphp
+                @endif
                 @endforeach
                 <h3>
                     Rp. {{ number_format($totalPendapatan,0,",",".") }}
                 </h3>
 
                 <p>Total Pendapatan</p>
-                </div>
-                <div class="icon">
+            </div>
+            <div class="icon">
                 <i class="ion ion-pie-graph"></i>
-                </div>
+            </div>
             <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
         </div>
     </div>
@@ -98,28 +98,12 @@
                     <div class="row mb-4">
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="text"
-                                    name="tanggalAwal"
-                                    class="form-control"
-                                    placeholder="Tangal Awal"
-                                    onfocusin="(this.type='date')"
-                                    onfocusout="(this.type='text')"
-                                    value=""
-                                    required
-                                />
+                                <input type="text" name="tanggalAwal" class="form-control" placeholder="Tangal Awal" onfocusin="(this.type='date')" onfocusout="(this.type='text')" value="" required />
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
-                                <input type="text"
-                                    name="tanggalAkhir"
-                                    value=""
-                                    class="form-control"
-                                    placeholder="Tangal Akhir"
-                                    onfocusin="(this.type='date')"
-                                    onfocusout="(this.type='text')"
-                                    required
-                                />
+                                <input type="text" name="tanggalAkhir" value="" class="form-control" placeholder="Tangal Akhir" onfocusin="(this.type='date')" onfocusout="(this.type='text')" required />
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -128,11 +112,7 @@
                                     <span class="fas fa-search"></span>
                                     Cari
                                 </button>
-                                <button type="button" class="btn btn-success" onclick="tablesToExcel(['table_status_orderan3'], ['Report'], 'Laporan_penjualan_anglo.xls', 'Excel')">
-                                    <span class="fas fa-table"></span>
-                                    Export Data
-                                </button>
-                                <a href="{{ route('dashboard') }}" class="btn btn-warning">
+                                <a href="{{ route('dashboard') }}" class="btn bt    n-warning">
                                     <span class="fa fa-refresh"></span>
                                     Segarkan
                                 </a>
@@ -161,77 +141,46 @@
                     </thead>
                     <tbody>
                         @php
-                            $no = 1;
-                            $grandTotal = 0;
+                        $no = 1;
+                        $grandTotal = 0;
                         @endphp
                         @foreach ($orderLine as $key => $item)
-                            @if ($item->order->status == '2')
-                                <tr>
-                                    <td>
-                                        {{ $no++ }}
-                                    </td>
-                                    <td>
-                                        {{ $item->order->name }}
-                                    </td>
-                                    <td>
-                                        {{ $item->order->no_meja }}
-                                    </td>
-                                    <td>
-                                        {{ $item->order->metode_pembayaran }}
-                                    </td>
-                                    <td>
-                                        {{ $item->order->email }}
-                                    </td>
-                                    <td>
-                                        {{ $item->food->name }}
-                                    </td>
-                                    <td>
-                                        {{ $item->food->harga_beli }}
-                                    </td>
-                                    <td>
-                                        {{ $item->qty }}
-                                    </td>
-                                    <td>
-                                        {{ $item->subtotal }}
-                                    </td>
-                                    <td>
-                                        {{ $item->order->created_at }}
-                                    </td>
-                                </tr>
-                            @endif
+                        @if ($item->order->status == '2')
+                        <tr>
+                            <td>
+                                {{ $no++ }}
+                            </td>
+                            <td>
+                                {{ $item->order->name }}
+                            </td>
+                            <td>
+                                {{ $item->order->no_meja }}
+                            </td>
+                            <td>
+                                {{ $item->order->metode_pembayaran }}
+                            </td>
+                            <td>
+                                {{ $item->order->email }}
+                            </td>
+                            <td>
+                                {{ $item->food->name }}
+                            </td>
+                            <td>
+                                {{ $item->food->harga_beli }}
+                            </td>
+                            <td>
+                                {{ $item->qty }}
+                            </td>
+                            <td>
+                                {{ $item->subtotal }}
+                            </td>
+                            <td>
+                                {{ $item->order->created_at }}
+                            </td>
+                        </tr>
+                        @endif
                         @endforeach
                     </tbody>
-                    {{-- <tfoot>
-                        <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th>Grand Total :</th>
-                            <th>
-                                @php
-                                    $grandQty = 0;
-                                @endphp
-                                @foreach ($order as $item)
-                                    @php
-                                        $grandQty = $grandQty + $item->totalQty();
-                                    @endphp
-                                @endforeach
-                                {{ $grandQty }} Item
-                            </th>
-                            <th>
-                                @php
-                                    $grandTotal = 0;
-                                @endphp
-                                @foreach ($order as $item)
-                                    @php
-                                        $grandTotal = $grandTotal + $item->subTotal();
-                                    @endphp
-                                @endforeach
-                                Rp. {{ number_format($grandTotal,0,",",".") }}
-                            </th>
-                            <th></th>
-                        </tr>
-                    </tfoot> --}}
                 </table>
                 <table class="table table-borderless">
                     <tbody>
@@ -243,27 +192,27 @@
                             <th>:</th>
                             <th>
                                 @php
-                                    $grandQty = 0;
+                                $grandQty = 0;
                                 @endphp
                                 @foreach ($orderLine as $item)
-                                    @if ($item->order->status == '2')
-                                        @php
-                                            $grandQty += $item->qty;
-                                        @endphp
-                                    @endif
+                                @if ($item->order->status == '2')
+                                @php
+                                $grandQty += $item->qty;
+                                @endphp
+                                @endif
                                 @endforeach
                                 {{ $grandQty }} Qty
                             </th>
                             <th>
                                 @php
-                                    $grandTotal = 0;
+                                $grandTotal = 0;
                                 @endphp
                                 @foreach ($orderLine as $item)
-                                    @if ($item->order->status == '2')
-                                        @php
-                                            $grandTotal += $item->subtotal;
-                                        @endphp
-                                    @endif
+                                @if ($item->order->status == '2')
+                                @php
+                                $grandTotal += $item->subtotal;
+                                @endphp
+                                @endif
                                 @endforeach
                                 Rp. {{ number_format($grandTotal,0,",",".") }}
                             </th>
@@ -279,15 +228,18 @@
 @endsection
 
 @section('footer-scripts')
-    <script>
-            $('#table_status_orderan3').DataTable({
-                responsive: true,
-                lengthCase: true,
-                autoWidth:true,
-                paging:true,
-                searching:true,
-                ordering:true,
-                info:true,
-        });
-    </script>
+<script>
+
+</script>
+<script>
+    $('#table_status_orderan3').DataTable({
+        responsive: true,
+        lengthCase: true,
+        autoWidth: true,
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+    });
+</script>
 @endsection
