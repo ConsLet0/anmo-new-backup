@@ -7,8 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
     <title>@yield('title') | Pelanggan</title>
-
+    
     <link rel="stylesheet" href="{{ asset('bootstrap/css/bootstrap.min.css') }}">
     {{-- Font Awesome --}}
     <script src="https://kit.fontawesome.com/e0e5d17da7.js" crossorigin="anonymous"></script>
