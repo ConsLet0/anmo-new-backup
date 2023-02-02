@@ -163,7 +163,7 @@ Meja {{ $tables->no_meja }}
                         </li>
                         <li class="tab-item">
                             <!-- Button trigger modal -->
-                            <button type="submit" class="btn btn-danger">
+                            <button type="submit" class="btn btn-light">
                                 <span class="fas fa-cart-arrow-down"></span>
                                 Pesan
                             </button>
