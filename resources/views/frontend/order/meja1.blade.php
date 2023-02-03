@@ -107,6 +107,9 @@
                                 </tr>
                                 @endif
                                 @endif
+                                @php
+                                $index++;
+                                @endphp
                                 @endforeach
                                 {{-- End Loop Foodd --}}
                             </tbody>
