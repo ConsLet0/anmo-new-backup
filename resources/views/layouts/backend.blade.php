@@ -101,7 +101,6 @@
                     <a onclick="event.preventDefault();document.getElementById('logout-form').submit()"
                         style="cursor: pointer" class="nav-link" href="{{ route('logout') }}" role="button">
                         Logout
-                        {{-- <i class="fa fa-sign-out" aria-hidden="true"></i> --}}
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="display-none">
                         @csrf

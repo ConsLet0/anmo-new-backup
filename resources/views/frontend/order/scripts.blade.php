@@ -36,7 +36,7 @@
                             confirmButtonText: '@if(isset($tables)) <a style="color:#fff;" href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}">Ok</a> @endif',
                             focusConfirm: false,
                         });
-                        $('#orderMakanan')[0].reset();
+                        // $('#orderMakanan')[0].reset();
                     }
                 }
             });

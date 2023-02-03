@@ -73,6 +73,20 @@
                             </div>
                         </div>
                     </div>
+                    
+                    @if ($order->proof_of_payment)
+                    <div class="row">
+                        <div class="col-md-12 form-group">
+                            <label>Bukti pembayaran</label>
+                            <div>
+                                <a href="{{ asset('storage/proof-of-payment/'.$order->proof_of_payment) }}" target="_blank">
+                                    <img src="{{ asset('storage/proof-of-payment/'.$order->proof_of_payment) }}" alt="proof of payment" style="width: 200px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    @endif
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">

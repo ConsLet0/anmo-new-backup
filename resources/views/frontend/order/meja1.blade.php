@@ -48,10 +48,13 @@
     </div>
     <div class="row" style="margin-block-end: 500px">
         {{-- Start Loop Category --}}
+        @php
+            $index = 0;
+        @endphp
         @foreach ($categories as $category)
         <div class="col-md-12">
             <p>
-                <button class="dropdown btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
+                <button type="button" class="dropdown btn-lg btn-block" data-toggle="collapse" href="#multiCollapseExample1{{ $category->slug }}" role="button" aria-expanded="false" aria-controls="multiCollapseExample1{{ $category->name }}">
                     <h4 class="cat-name mt-2">
                         <i class="fas fa-bars"></i> {{ $category->name }}
                     </h4>
@@ -63,7 +66,7 @@
                         <table id="tableMenuMakanan" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Pesan Berapa</th>
+                                    <th>Jumlah</th>
                                     <th>Item</th>
                                     <th>Harga</th>
                                 </tr>
@@ -72,38 +75,41 @@
                                 {{-- Start Loop Food --}}
                                 @foreach ($foods as $food => $item)
                                 @if ($item->status == 'Tersedia')
-                                @if ($item->categories->name == $category->name)
-                                <tr>
-                                    <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                        <input type="number" value="0" name="qty[]" id="" class="form-control">
-                                        <select hidden name="status" class="form-control">
-                                            <option selected value="0">Menunggu Konfirmasi</option>
-                                        </select>
-                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                    </td>
-                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                </tr>
-                                @endif
+                                    @if ($item->categories->name == $category->name)
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
+                                            <input type="number" value="0" name="qty[{{$index}}]" id="" class="form-control qty-input" data-food-id="{{ $item->id }}">
+                                            <select hidden name="status" class="form-control">
+                                                <option selected value="0">Menunggu Konfirmasi</option>
+                                            </select>
+                                            <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                            <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
+                                        </td>
+                                        <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                        <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                    </tr>
+                                    @endif
                                 @else
-                                @if ($item->categories->name == $category->name)
-                                <tr>
-                                    <td>
-                                        <input type="hidden" class="form-control" name="foods[]" value="{{ $item->id }}">
-                                        <button type="button" class="btn btn-light" disabled>Sold Out</button>
-                                        <select hidden name="status" class="form-control">
-                                            <option selected value="0">Menunggu Konfirmasi</option>
-                                        </select>
-                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                        <input type="hidden" name="tables[]" value="{{ $tables->no_meja }}">
-                                    </td>
-                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                </tr>
+                                    @if ($item->categories->name == $category->name)
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
+                                            <button type="button" class="btn btn-light" disabled>Sold Out</button>
+                                            <select hidden name="status" class="form-control">
+                                                <option selected value="0">Menunggu Konfirmasi</option>
+                                            </select>
+                                            <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                            <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
+                                        </td>
+                                        <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                        <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                    </tr>
+                                    @endif
                                 @endif
-                                @endif
+                                @php
+                                    $index++;
+                                @endphp
                                 @endforeach
                                 {{-- End Loop Foodd --}}
                             </tbody>
@@ -112,6 +118,9 @@
                 </div>
             </div>
         </div>
+        @php
+        $index++;
+        @endphp
         @endforeach
         {{-- End Loop Category --}}
     </div>
@@ -125,6 +134,29 @@
                 <div class="col-md-12">
                     <div class="tab-info form-group text-center">
                         <label class="people_name" for="name">Informasi Pesanan</label>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Menu</th>
+                                    <th>Jumlah</th>
+                                    <th>Harga</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableCart">
+                                <tr>
+                                    <td colspan="5">Silahkan pilih menu terlebih dahulu</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" style="border: none;" class="text-right">Total</td>
+                                    <td id="total">Rp. 0</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Pemesan">
                             <span class="text-danger error-text name_error"></span>
@@ -133,15 +165,23 @@
                             <input type="email" class="form-control" name="email" placeholder="Masukkan Email Pemesan">
                             <span class="text-danger error-text email_error"></span>
                         </div>
-                        <select name="metode_pembayaran" class="custom-select">
-                            <option value="#">Pilih Metode Bayar</option>
+
+                        <select name="metode_pembayaran" class="custom-select" id="paymentMethod">
+                            <option disabled value="#">Pilih Metode Bayar</option>
                             <option value="CASH">CASH</option>
                             <option value="CASHLESS">CASHLESS</option>
                             <option value="DEBIT">DEBIT</option>
                         </select>
                         <span class="text-danger error-text metode_pembayaran_error"></span>
+
+                    </div>
+                    <div class="form-group" id="proofOfPayment" style="display: none">
+                        <label for="proof_of_payment">Masukkan Bukti Pembayaran Disini | QRIS Terdapat di meja anda</label>
+                        <input type="file" accept="image/*, application/pdf" class="form-control" name="proof_of_payment" id="proofOfPaymentInput">
+                        <span class="text-danger error-text email_error"></span>
                     </div>
                 </div>
+
                 <div class="col-md-12" style="background-color: #fff;">
                     <div class="tab">
                         @if (isset($tables))
@@ -176,4 +216,71 @@
 
 @section('footer-scripts')
 @include('frontend.order.scripts')
+
+<script>
+    const foods = @json($foods);
+    console.log({foods});
+
+    const paymentMethod = document.getElementById('paymentMethod');
+    const proofOfPayment = document.getElementById('proofOfPayment');
+    const proofOfPaymentInput = document.getElementById('proofOfPaymentInput');
+    const tableCart = document.getElementById('tableCart');
+    const totalEl = document.getElementById('total');
+
+    const qtyEl = document.getElementsByClassName('qty-input');
+
+    let selectedFood = [];
+    [...qtyEl].forEach(elem => {
+        const foodId = parseInt(elem.getAttribute('data-food-id'));
+
+        elem.addEventListener('change', () => {
+            const qty = parseInt(elem.value);
+            console.log({ qty, normal: elem.value });
+
+            const indexSelected = selectedFood.findIndex(r => r.foodId === foodId);
+            if (qty > 0) {
+                if (indexSelected >= 0) selectedFood[indexSelected].qty = qty;
+                else selectedFood = [...selectedFood, { qty, foodId: foodId }];
+            } else {
+                if (indexSelected >= 0) selectedFood.splice(indexSelected, 1);
+            }
+
+            renderTable();
+        });
+    });
+
+    function renderTable() {
+        let html = '';
+        let no = 1;
+        let total = 0;
+
+        selectedFood.forEach(data => {
+            const food = foods.find(r => data.foodId === r.id);
+            const subtotal = data.qty * food.harga_beli;
+
+            total += subtotal;
+
+            html += `<tr>
+                <td>${no}</td>
+                <td>${food.name}</td>
+                <td>${data.qty}</td>
+                <td>Rp. ${(food.harga_beli).toLocaleString('ID')}</td>
+                <td>Rp. ${subtotal.toLocaleString('ID')}</td>
+            </tr>`;
+            no++;
+        });
+
+        tableCart.innerHTML = html;
+        totalEl.innerHTML = `Rp. ${total.toLocaleString('ID')}`;
+    }
+
+    paymentMethod.addEventListener('change', () => {
+        if (paymentMethod.value === 'CASHLESS') {
+            proofOfPayment.style.display = 'block';
+        } else {
+            proofOfPayment.style.display = 'none';
+            proofOfPaymentInput.value = '';
+        }
+    });
+</script>
 @endsection
