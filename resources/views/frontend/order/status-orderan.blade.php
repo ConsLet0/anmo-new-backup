@@ -52,16 +52,16 @@
                                                     </td>
                                                     <td>
                                                         @if ($item->status == "0")
-                                                            <span class="badge badge-danger badge-pill">
-                                                                Pesanan Disiapkan !
+                                                            <span class="badge badge-warning badge-pill">
+                                                                Pesanan Sedang Disiapkan
                                                             </span>
                                                         @elseif($item->status == "1")
                                                             <span class="badge badge-primary badge-pill">
-                                                                Selamat Menikmati
+                                                                Pesanan Sudah Dihidangkan
                                                             </span>
                                                         @else
                                                             <span class="badge badge-success badge-pill">
-                                                                Selesai
+                                                                Terima Kasih, Datang Kembali
                                                             </span>
                                                         @endif
                                                     </td>

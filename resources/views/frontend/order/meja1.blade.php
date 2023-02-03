@@ -152,6 +152,7 @@
 
                     </div>
                     <div class="form-group" id="proofOfPayment" style="display: none">
+                        <label for="proof_of_payment">Masukkan Bukti Pembayaran Disini</label>
                         <input type="file" accept="image/*, application/pdf" class="form-control" name="proof_of_payment" id="proofOfPaymentInput">
                         <span class="text-danger error-text email_error"></span>
                     </div>
