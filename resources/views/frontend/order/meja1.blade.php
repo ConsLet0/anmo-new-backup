@@ -66,7 +66,7 @@
                         <table id="tableMenuMakanan" class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Jumlah</th>
+                                    <th>Pesan Berapa</th>
                                     <th>Item</th>
                                     <th>Harga</th>
                                 </tr>
@@ -134,29 +134,6 @@
                 <div class="col-md-12">
                     <div class="tab-info form-group text-center">
                         <label class="people_name" for="name">Informasi Pesanan</label>
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Menu</th>
-                                    <th>Jumlah</th>
-                                    <th>Harga</th>
-                                    <th>Subtotal</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tableCart">
-                                <tr>
-                                    <td colspan="5">Silahkan pilih menu terlebih dahulu</td>
-                                </tr>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="4" style="border: none;" class="text-right">Total</td>
-                                    <td id="total">Rp. 0</td>
-                                </tr>
-                            </tfoot>
-                        </table>
-
                         <div class="form-group">
                             <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Pemesan">
                             <span class="text-danger error-text name_error"></span>
@@ -166,8 +143,33 @@
                             <span class="text-danger error-text email_error"></span>
                         </div>
 
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>No</th>
+                                    <th>Makanan / minuman</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Subtotal</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="tableCart">
+                                <tr>
+                                    <td colspan="5">Pilih terlebih dahulu makanan</td>
+                                </tr>
+                            </tbody>
+
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" style="border: none;" class="text-right">Total</td>
+                                    <td id="total">Rp. 0</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
                         <select name="metode_pembayaran" class="custom-select" id="paymentMethod">
-                            <option disabled value="#">Pilih Metode Bayar</option>
+                            <option value="#">Pilih Metode Bayar</option>
                             <option value="CASH">CASH</option>
                             <option value="CASHLESS">CASHLESS</option>
                             <option value="DEBIT">DEBIT</option>
@@ -176,7 +178,7 @@
 
                     </div>
                     <div class="form-group" id="proofOfPayment" style="display: none">
-                        <label for="proof_of_payment">Masukkan Bukti Pembayaran Disini | QRIS Terdapat di meja anda</label>
+                        <label for="proof_of_payment">Masukkan Bukti Pembayaran Disini</label>
                         <input type="file" accept="image/*, application/pdf" class="form-control" name="proof_of_payment" id="proofOfPaymentInput">
                         <span class="text-danger error-text email_error"></span>
                     </div>
