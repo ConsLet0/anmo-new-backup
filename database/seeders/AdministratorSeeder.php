@@ -15,9 +15,9 @@ class AdministratorSeeder extends Seeder
     {
         $administrator              =   new \App\Models\User;
         $administrator->name        =   'Administrator';
-        $administrator->email       =   'administrator@gmail.com';
+        $administrator->email       =   'anmocafe954@gmail.com';
         $administrator->roles       =   'Admin';
-        $administrator->password    =   bcrypt('administrator@gmail.com');
+        $administrator->password    =   bcrypt('Anmo_Cafe-945.');
         $administrator->save();
         $this->command->info('User Admin Berhasil Di Insert !');
     }
