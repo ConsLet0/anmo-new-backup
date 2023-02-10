@@ -1,7 +1,7 @@
 @extends('layouts.tables.meja')
 
 @section('title')
-    Meja {{ $tables->no_meja }}
+Meja {{ $tables->no_meja }}
 @endsection
 
 @section('content')
@@ -49,7 +49,7 @@
     <div class="row" style="margin-block-end: 500px">
         {{-- Start Loop Category --}}
         @php
-            $index = 0;
+        $index = 0;
         @endphp
         @foreach ($categories as $category)
         <div class="col-md-12">
@@ -75,40 +75,40 @@
                                 {{-- Start Loop Food --}}
                                 @foreach ($foods as $food => $item)
                                 @if ($item->status == 'Tersedia')
-                                    @if ($item->categories->name == $category->name)
-                                    <tr>
-                                        <td>
-                                            <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
-                                            <input type="number" value="0" name="qty[{{$index}}]" id="" class="form-control qty-input" data-food-id="{{ $item->id }}">
-                                            <select hidden name="status" class="form-control">
-                                                <option selected value="0">Menunggu Konfirmasi</option>
-                                            </select>
-                                            <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                            <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
-                                        </td>
-                                        <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                        <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                    </tr>
-                                    @endif
+                                @if ($item->categories->name == $category->name)
+                                <tr>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
+                                        <input type="number" value="0" name="qty[{{$index}}]" id="" class="form-control qty-input" data-food-id="{{ $item->id }}">
+                                        <select hidden name="status" class="form-control">
+                                            <option selected value="0">Menunggu Konfirmasi</option>
+                                        </select>
+                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
+                                    </td>
+                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                </tr>
+                                @endif
                                 @else
-                                    @if ($item->categories->name == $category->name)
-                                    <tr>
-                                        <td>
-                                            <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
-                                            <button type="button" class="btn btn-light" disabled>Sold Out</button>
-                                            <select hidden name="status" class="form-control">
-                                                <option selected value="0">Menunggu Konfirmasi</option>
-                                            </select>
-                                            <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
-                                            <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
-                                        </td>
-                                        <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
-                                        <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
-                                    </tr>
-                                    @endif
+                                @if ($item->categories->name == $category->name)
+                                <tr>
+                                    <td>
+                                        <input type="hidden" class="form-control" name="foods[{{$index}}]" value="{{ $item->id }}">
+                                        <button type="button" class="btn btn-light" disabled>Sold Out</button>
+                                        <select hidden name="status" class="form-control">
+                                            <option selected value="0">Menunggu Konfirmasi</option>
+                                        </select>
+                                        <input type="hidden" name="no_meja" value="{{ $tables->no_meja }}">
+                                        <input type="hidden" name="tables[{{$index}}]" value="{{ $tables->no_meja }}">
+                                    </td>
+                                    <td> <img width="50px" src="{{ url('storage/makanan-dan-minuman/'.$item->photo) }}" alt="Gambar Item"> {{ $item->name }}</td>
+                                    <td>Rp. {{ formatRupiah($item->harga_beli) }}</td>
+                                </tr>
+                                @endif
                                 @endif
                                 @php
-                                    $index++;
+                                $index++;
                                 @endphp
                                 @endforeach
                                 {{-- End Loop Foodd --}}
@@ -220,8 +220,21 @@
 @include('frontend.order.scripts')
 
 <script>
+    function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
+
+<script>
     const foods = @json($foods);
-    console.log({foods});
+    console.log({
+        foods
+    });
 
     const paymentMethod = document.getElementById('paymentMethod');
     const proofOfPayment = document.getElementById('proofOfPayment');
@@ -237,12 +250,18 @@
 
         elem.addEventListener('change', () => {
             const qty = parseInt(elem.value);
-            console.log({ qty, normal: elem.value });
+            console.log({
+                qty,
+                normal: elem.value
+            });
 
             const indexSelected = selectedFood.findIndex(r => r.foodId === foodId);
             if (qty > 0) {
                 if (indexSelected >= 0) selectedFood[indexSelected].qty = qty;
-                else selectedFood = [...selectedFood, { qty, foodId: foodId }];
+                else selectedFood = [...selectedFood, {
+                    qty,
+                    foodId: foodId
+                }];
             } else {
                 if (indexSelected >= 0) selectedFood.splice(indexSelected, 1);
             }
@@ -285,4 +304,5 @@
         }
     });
 </script>
+
 @endsection
