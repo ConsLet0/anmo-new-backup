@@ -1,67 +1,82 @@
-*{
-    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+* {
+    @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap");
 }
 
-.description{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700; 
+.description {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
 }
 
-.logo{
+.logo {
     width: 100px;
 }
 
-.description .title{
-    font-family: 'Quicksand', sans-serif;   
-    font-weight: 700; 
+.description .title {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
     font-size: 1.5rem;
     color: #273238;
 }
 
-.description a{   
+.description a {
     font-size: 1rem;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700; 
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
     color: #79909b;
     text-decoration: none;
 }
 
-.description .info a{
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;    
+.description .info a {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
     font-size: 1rem;
     color: #347fc9;
     text-decoration: none;
 }
 
-.title{
+.title {
     font-size: 1.2rem;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-weight: 700;
-    color: #347fc9; 
+    color: #347fc9;
 }
 
-.people_name{
+.people_name {
     font-size: 1rem;
-    font-family: 'Quicksand', sans-serif;
+    font-family: "Quicksand", sans-serif;
     font-weight: 700;
     color: #273238;
-
 }
 
-.dropdown{
+.dropdown {
     background-color: #273238;
 }
 
-.cat-name{
-    font-family: 'Quicksand', sans-serif;
-    font-size: .8rem;
+.show_hide {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    background-color: #273238;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.show_hide:hover {
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+    background-color: #fff;
+    color: #273238;
+    font-size: 1rem;
+}
+
+.cat-name {
+    font-family: "Quicksand", sans-serif;
+    font-size: 0.8rem;
     font-weight: 500;
     color: #ffff;
 }
 
-.table .input th{
-    font-family: 'Quicksand', sans-serif;
+.table .input th {
+    font-family: "Quicksand", sans-serif;
     font-weight: 500;
 }
 
@@ -86,7 +101,6 @@
     display: inline-grid;
     grid-gap: 0em;
     transition: color 5s ease-in;
-    /* line-height: 20px; */
 }
 
 .tab-items > :nth-child(1) {
@@ -135,29 +149,29 @@
 
 @media only screen and (min-width: 400px) {
     /* For tablets: */
-    .description{
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700; 
+    .description {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
     }
-    
-    .logo{
+
+    .logo {
         width: 100px;
     }
-    
-    .description .title{  
+
+    .description .title {
         font-size: 1rem;
-        font-weight: 700; 
+        font-weight: 700;
         color: #273238;
     }
-    
-    .description a{   
-        font-size: .8rem;
+
+    .description a {
+        font-size: 0.8rem;
         color: #79909b;
         text-decoration: none;
     }
-    
-    .description .info a{   
-        font-size: .8rem;
+
+    .description .info a {
+        font-size: 0.8rem;
         color: #347fc9;
         text-decoration: none;
     }
@@ -165,29 +179,29 @@
 
 @media only screen and (min-width: 768px) {
     /* For tablets: */
-    .description{
-        font-family: 'Quicksand', sans-serif;
-        font-weight: 700; 
+    .description {
+        font-family: "Quicksand", sans-serif;
+        font-weight: 700;
     }
-    
-    .logo{
+
+    .logo {
         width: 100px;
     }
-    
-    .description .title{  
+
+    .description .title {
         font-size: 1.2rem;
-        font-weight: 700; 
+        font-weight: 700;
         color: #273238;
     }
-    
-    .description a{   
-        font-size: .9rem;
+
+    .description a {
+        font-size: 0.9rem;
         color: #79909b;
         text-decoration: none;
     }
-    
-    .description .info a{   
-        font-size: .9rem;
+
+    .description .info a {
+        font-size: 0.9rem;
         color: #347fc9;
         text-decoration: none;
     }
