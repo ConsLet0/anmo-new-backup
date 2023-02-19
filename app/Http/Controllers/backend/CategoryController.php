@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,7 @@ class CategoryController extends Controller
 {
     public function index()
     {
-        $category = \App\Models\Category::orderBy('id', 'DESC')
+        $category = Category::orderBy('id', 'DESC')
             ->get();
         return view('backend.category.index');
     }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\backend;
 
+use App\Models\CategoryDrink;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ class CategoryDrinkController extends Controller
 
     public function fetch_kategori_minuman(Request $request)
     {
-        $categoryDrink = \App\Models\CategoryDrink::orderBy('id', 'DESC')
+        $categoryDrink = CategoryDrink::orderBy('id', 'DESC')
             ->get();
 
         if ($request->ajax()) {
@@ -53,9 +54,9 @@ class CategoryDrinkController extends Controller
             ]);
         } else {
 
-            $category = new \App\Models\CategoryDrink;
+            $category = new CategoryDrink();
             $category->name     = $request->get('name');
-            $category->slug     = \Str::slug($request->get('name'), '-');
+            $category->slug     = Str::slug($request->get('name'), '-');
             $category->save();
 
             return response()->json([

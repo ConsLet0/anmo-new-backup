@@ -219,7 +219,7 @@ Meja {{ $tables->no_meja }}
 @section('footer-scripts')
 @include('frontend.order.scripts')
 
-<script>
+<!-- <script>
     function myFunction() {
         var x = document.getElementById("myDIV");
         if (x.style.display === "none") {
@@ -228,7 +228,7 @@ Meja {{ $tables->no_meja }}
             x.style.display = "none";
         }
     }
-</script>
+</script> -->
 
 <script>
     const foods = @json($foods);
