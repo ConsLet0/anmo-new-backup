@@ -152,9 +152,9 @@
         <div class="fixed-bottom bg-white">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 mb-2">
+                    <div class="col-md-12 mb-2 mt-2">
                         <button type="button" class="dropdown btn-lg btn-block show_hide" onclick="showhide()"
-                            data-toggle="collapse">Show / Hide Element</button>
+                            data-toggle="collapse">Show / Hide Cart</button>
                     </div>
                     <div id="table-form" class="col-md-12">
                         <div class="tab-info form-group text-center">
@@ -196,7 +196,7 @@
                             </table>
 
                             <select name="metode_pembayaran" class="custom-select" id="paymentMethod">
-                                <option value="#">Pilih Metode Bayar</option>
+                                <option disabled value="#">Pilih Metode Bayar</option>
                                 <option value="CASH">CASH</option>
                                 <option value="CASHLESS">CASHLESS</option>
                                 <option value="DEBIT">DEBIT</option>
@@ -213,7 +213,7 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="tab">
+                        <div class="tab mb-2">
                             @if (isset($tables))
                                 <li class="tab-item different">
                                     <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link"

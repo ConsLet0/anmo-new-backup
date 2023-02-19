@@ -93,19 +93,21 @@
 <div class="fixed-bottom">
     <div class="container">
         <div class="row">
-            <div class="tab">
-                <li class="tab-item different">
-                    <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                        <i class="fas fa-list"></i>
-                        List Order
-                    </a>
-                </li>
-                <li class="tab-item">
-                    <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
-                        <i class="fas fa-utensils"></i>
-                        Menu Utama
-                    </a>
-                </li>
+            <div class="col-md-12">
+                <div class="tab mb-2">
+                    <li class="tab-item different">
+                        <a href="{{ route('pelanggan.status_orderan', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
+                            <i class="fas fa-list"></i>
+                            List Order
+                        </a>
+                    </li>
+                    <li class="tab-item">
+                        <a href="{{ route('pelanggan.meja1', $tables->no_meja) }}" class="item-link" onclick="select(this)" href="/">
+                            <i class="fas fa-utensils"></i>
+                            Menu Utama
+                        </a>
+                    </li>
+                </div>
             </div>
         </div>
     </div>

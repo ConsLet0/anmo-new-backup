@@ -54,17 +54,17 @@
 
 .show_hide {
     font-family: "Quicksand", sans-serif;
-    font-weight: 700;
-    background-color: #273238;
+    font-weight: 500;
+    background-color: #347fc9;
     color: #fff;
     font-size: 1rem;
 }
 
 .show_hide:hover {
     font-family: "Quicksand", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     background-color: #fff;
-    color: #273238;
+    color: #347fc9;
     font-size: 1rem;
 }
 
