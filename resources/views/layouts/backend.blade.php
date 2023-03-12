@@ -51,8 +51,8 @@
     <link rel="stylesheet" href="{{ asset('backend/plugins/daterangepicker/daterangepicker.css') }}">
     <!-- summernote -->
     <link rel="stylesheet" href="{{ asset('backend/plugins/summernote/summernote-bs4.min.css') }}">
-    <link rel="icon" type="image/x-icon" href="{{ asset('images/logo-anmo.png') }}">
-    <title>@yield('title') | ANMO CAFE SUKAASIH</title>
+    <link rel="icon" type="image/x-icon" href="{{ asset('images/logocoffee.png') }}">
+    <title>@yield('title') | Coffee Shop</title>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -115,9 +115,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="{{ route('dashboard') }}" class="brand-link">
-                <img src="{{ asset('images/logo-anmo.png') }}" alt="AdminLTE Logo"
+                <img src="{{ asset('images/logocoffee.png') }}" alt="AdminLTE Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Admin Menu Anmo</span>
+                <span class="brand-text font-weight-light"><b>Admin Menu</b></span>
             </a>
 
             <!-- Sidebar -->
@@ -272,10 +272,10 @@
         <footer class="main-footer">
             <!-- To the right -->
             <div class="float-right d-none d-sm-inline">
-                ANMO CAFE SUKAASIH
+                Coffee Shop
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2022 <a href="#">ANMO CAFE SUKAASIH</a>.</strong> All rights reserved.
+            <strong>Copyright &copy; 2022 <a href="#">Coffee Shop</a>.</strong> All rights reserved.
         </footer>
 
     </div>

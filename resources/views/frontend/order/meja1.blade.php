@@ -9,11 +9,10 @@
         <div class="description col-md-12">
             <img src="{{ asset('images/logocoffee.png') }}" class="logo" alt="...">
             <h4 class="title mt-2">Coffee Shop</h4>
-            <a target="__blank" href="https://goo.gl/maps/B11jLLUFN2WW1yjAA" class="address">Jl Daan Mogot Sukaasih Kota
-                Tangerang</a>
+            <a target="__blank" href="https://goo.gl/maps/B11jLLUFN2WW1yjAA" class="address">Atla St San Fransisco</a>
             <div class="info">
-                <a href="tel:085960007310 "><i class="fas fa-phone-alt"></i> +6285960007310</a><br>
-                <a href="mailto:anmocafe954@gmail.com ">anmocafe954@gmail.com</a>
+                <a href="tel:085960007310 "><i class="fas fa-phone-alt"></i> +1487-6323</a><br>
+                <a href="mailto:anmocafe954@gmail.com ">coffeeshop@gmail.com</a>
             </div>
         </div>
     </div>

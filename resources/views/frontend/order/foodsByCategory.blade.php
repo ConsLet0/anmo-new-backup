@@ -7,7 +7,7 @@
 @section('content')
 <div class="row mb-3 text-center">
     <div class="col-md-12">
-        <h4 class="text-uppercase">ANMO CAFE SUKAASIH</h4>
+        <h4 class="text-uppercase">Coffee Shop</h4>
     </div>
 </div>
 <div class="row mb-3">
@@ -20,14 +20,6 @@
                 <img src="{{ asset('static/banner-promo/2.jpeg') }}" class="d-block w-100" alt="...">
             </div>
         </div>
-        {{-- <button class="carousel-control-prev" type="button" data-target="#carouselExampleControls" data-slide="prev">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i>
-            <span class="sr-only">Previous</span>
-        </button> --}}
-            {{-- <button class="carousel-control-next" type="button" data-target="#carouselExampleControls" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-            </button> --}}
     </div>
 </div>
 <div class="row">

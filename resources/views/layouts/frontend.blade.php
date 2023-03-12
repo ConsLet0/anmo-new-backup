@@ -16,7 +16,7 @@
 
     {{-- Font Awesome --}}
     <script src="https://kit.fontawesome.com/e0e5d17da7.js" crossorigin="anonymous"></script>
-    <title>@yield('title') | ANMO CAFE SUKAASIH</title>
+    <title>@yield('title') | Coffee Shop</title>
 </head>
 <body>
     <header id="header">
@@ -26,7 +26,7 @@
 					<div class="col-md-4 clearfix">
 						<div class="logo pull-left">
 							{{-- <a href="index.html"><img src="{{ asset('frontend/images/home/logo.png') }}" alt="" /></a> --}}
-                            <h3>ANMO CAFE SUKAASIH</h4>
+                            <h3>Coffee Shop</h4>
 						</div>
 
 					</div>

@@ -1,24 +1,45 @@
 /*price range*/
 
 if ($.fn.slider) {
-    $('#sl2').slider();
+    $("#sl2").slider();
 }
 
 var RGBChange = function () {
-    $('#RGB').css('background', 'rgb(' + r.getValue() + ',' + g.getValue() + ',' + b.getValue() + ')')
+    $("#RGB").css(
+        "background",
+        "rgb(" + r.getValue() + "," + g.getValue() + "," + b.getValue() + ")"
+    );
 };
+
+$(document).ready(function () {
+    //reload page otamatis
+    setTimeout(function () {
+        window.location.reload(1);
+    }, 10000);
+
+    $("#table_status_orderan").DataTable({
+        responsive: true,
+        lengthCase: true,
+        autoWidth: true,
+        paging: true,
+        searching: true,
+        ordering: true,
+        info: true,
+    });
+});
+
 
 /*scroll to top*/
 
 $(document).ready(function () {
     $(function () {
         $.scrollUp({
-            scrollName: 'scrollUp', // Element ID
+            scrollName: "scrollUp", // Element ID
             scrollDistance: 300, // Distance from top/bottom before showing element (px)
-            scrollFrom: 'top', // 'top' or 'bottom'
+            scrollFrom: "top", // 'top' or 'bottom'
             scrollSpeed: 300, // Speed back to top (ms)
-            easingType: 'linear', // Scroll to top easing (see http://easings.net/)
-            animation: 'fade', // Fade, slide, none
+            easingType: "linear", // Scroll to top easing (see http://easings.net/)
+            animation: "fade", // Fade, slide, none
             animationSpeed: 200, // Animation in speed (ms)
             scrollTrigger: false, // Set a custom triggering element. Can be an HTML string or jQuery object
             //scrollTarget: false, // Set a custom target element for scrolling to the top
@@ -26,7 +47,9 @@ $(document).ready(function () {
             scrollTitle: false, // Set a custom <a> title if required.
             scrollImg: false, // Set true to use image
             activeOverlay: false, // Set CSS color to display scrollUp active point, e.g '#00FFFF'
-            zIndex: 2147483647 // Z-Index for the overlay
+            zIndex: 2147483647, // Z-Index for the overlay
         });
     });
 });
+
+

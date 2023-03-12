@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Struk ANMO CAFE</title>
+    <title>STRUK COFFEE SHOP</title>
     @include('frontend.order.style')
 </head>
 
@@ -14,7 +14,7 @@
         <div class="content">
             <div class="header">
                 {{-- <h4>ANMO CAFE SUKAASIH</h4> --}}
-                <h5><b>STRUK PEMBAYARAN ANMO <br>CAFE SUKAASIH</b></h5>
+                <h5><b>STRUK PEMBAYARAN COFFEE SHOP</b></h5>
             </div>
             <table>
                 <tbody>
