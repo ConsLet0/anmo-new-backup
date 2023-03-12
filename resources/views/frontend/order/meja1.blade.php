@@ -7,8 +7,8 @@
 @section('content')
     <div class="row mb-3 text-center">
         <div class="description col-md-12">
-            <img src="{{ asset('images/logo-anmo.png') }}" class="logo" alt="...">
-            <h4 class="title mt-2">Anmo Cafe</h4>
+            <img src="{{ asset('images/logocoffee.png') }}" class="logo" alt="...">
+            <h4 class="title mt-2">Coffee Shop</h4>
             <a target="__blank" href="https://goo.gl/maps/B11jLLUFN2WW1yjAA" class="address">Jl Daan Mogot Sukaasih Kota
                 Tangerang</a>
             <div class="info">

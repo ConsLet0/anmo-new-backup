@@ -80,9 +80,9 @@
                                                         </a>
                                                         <br>
                                                     @else
-                                                        <button disabled class="badge badge-success">
+                                                        <a href="{{ route('orderan.changeStatus', $item->id) }}" class="badge badge-success">
                                                             Selesai
-                                                        </button>
+                                                        </a>
                                                         <br>
                                                         {{ $item->updated_at->format('d-M-Y H:i:s') }}
                                                 @endif
