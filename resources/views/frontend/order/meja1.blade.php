@@ -195,7 +195,7 @@
                             </table>
 
                             <select name="metode_pembayaran" class="custom-select" id="paymentMethod">
-                                <option disabled value="#">Pilih Metode Bayar</option>
+                                <option disabled>Pilih Metode Bayar</option>
                                 <option value="CASH">CASH</option>
                                 <option value="CASHLESS">CASHLESS</option>
                                 <option value="DEBIT">DEBIT</option>

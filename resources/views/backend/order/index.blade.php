@@ -13,14 +13,6 @@
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <a href="{{ route('orderan.selectTables') }}" class="btn btn-success float-right">
-                            <span class="fa fa-cart-plus"></span>
-                            Tambah Orderan
-                        </a>
-                    </div>
-                </div>
                 <div class="row mb-4">
                     <div class="col-md-12">
                         <h4 class="title">Filter Berdasarkan Status Pesanan</h5>
