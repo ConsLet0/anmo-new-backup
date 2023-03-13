@@ -80,7 +80,7 @@
                 <div class="icon">
                 <i class="ion ion-pie-graph"></i>
                 </div>
-            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            <a href="{{ route('dashboard') }}" class="small-box-footer">Dashboard <i class="fas fa-arrow-circle-down"></i></a>
         </div>
     </div>
     <!-- ./col -->
