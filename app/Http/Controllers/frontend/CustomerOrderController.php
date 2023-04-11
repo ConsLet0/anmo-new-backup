@@ -114,7 +114,7 @@ class CustomerOrderController extends Controller
                 
             return response()->json([
                 'status'    => 200,
-                'message'   => 'Data Orderan Anda Berhasil Di Kirim',
+                'message'   => 'Data Orderan Anda Sudah Masuk !',
             ]);
 
             // return redirect()->back();
