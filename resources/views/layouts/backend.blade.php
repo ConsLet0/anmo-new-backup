@@ -126,7 +126,7 @@
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="info">
                         <a href="{{ route('dashboard') }}" class="d-block">
-                            Welcome {{ auth()->user()->name }} !
+                            Welcome Admin!
                         </a>
                     </div>
                 </div>
